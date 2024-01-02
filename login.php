@@ -177,7 +177,7 @@ include("connect.php");
 
 <body>
 
-  ` <form action="" method ="POST"> 
+   <form action="" method ="POST"> 
     <div class="container" onclick="onclick">
   <div class="top"></div>
   <div class="bottom"></div>
