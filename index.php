@@ -10,14 +10,14 @@ if (isset($_SESSION['username'])) {
         $phone = $_POST['phone'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        
+        $encpassword = md5( $password);
         $select = "select user_id from tbl_user where username='$username'";
         $result = mysqli_query($connect, $select);
         $count = mysqli_num_rows($result);
         if ($count > 0) {
             echo "<p>Error: User Name is already registered</p>";
         } else {
-            $insert = "insert into tbl_user values(0,'$email','$address',$phone,'$username','$password')";
+            $insert = "insert into tbl_user values(0,'$email','$address',$phone,'$username','$encpassword')";
             if (mysqli_query($connect, $insert)){
             header("location:login.php");
             }

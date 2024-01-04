@@ -7,18 +7,26 @@ include("connect.php");
     if (isset($_POST['btnsubmit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $select = "select * from tbl_user where username='$username' and password='$password'";
-        $result = mysqli_query($connect, $select);
-        $count = mysqli_num_rows($result);
-        if ($count > 0) {
-            $row = mysqli_fetch_row($result);
-            $_SESSION['username'] = $username;
-            $_SESSION['userid'] = $row[0];
-            header("location:home.php");
-        } else {
+        $select = "SELECT username,password FROM tbl_user WHERE username='$username'";
+        $check = mysqli_query($connect, $select);
+        $result = mysqli_fetch_assoc($check);
+        $user = $result['username'];
+         $encpass = $result['password'];
+         if (mysqli_num_rows($check)>0) {
+                $fpass=md5($password);
+                if($fpass=$encpass){
+                    $_SESSION['username'] = $username;
+                    $_SESSION['userid'] = $row[0];
+                    header("location:home.php");
+            }else{
+            echo "INCORRECT";
+            }
+         }
+     else {
      echo "Error: Either Username or Password Wrong";
  }
 }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
