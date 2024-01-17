@@ -192,7 +192,7 @@ include("connect.php");
   
   <div class="center">
    
-  <h2><b>Shopify's Shopping</b></h2>
+  <h2><b>Bid Bazzar</b></h2>
    
     <input type="text" placeholder="User Name" name="username"/>
     <input type="password" placeholder="Password" name="password"/>

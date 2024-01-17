@@ -105,7 +105,7 @@ if (!isset($_SESSION['username'])) {
     <div class="logo">
        <table>
                     <tr>
-                    <td><h2> Shopify's</h2></td><td> <img src="img/logo.png"  alt="Rotating Image" class="rotating-logo"></td> <td><h2>Shopping</h2></td>
+                    <td><h2>Bid Bazzar</h2></td><td> <img src="img/logo.png"  alt="Rotating Image" class="rotating-logo"></td> <td><h2>Shopping</h2></td>
                     </tr>
                 </table>
     </div>
@@ -114,6 +114,7 @@ if (!isset($_SESSION['username'])) {
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
+        
     </nav>
 </header>
     <input type="submit" name="btnlogout" value="Logout">

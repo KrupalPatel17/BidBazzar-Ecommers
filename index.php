@@ -191,7 +191,7 @@ if (isset($_SESSION['username'])) {
   
   <div class="center">
    
-  <h2><b>Shopify's Shopping</b></h2>
+  <h2><b>Bid Bazzar</b></h2>
     <input type="email" placeholder="Email" name="email"/>
     <input type="text" placeholder="Address" name="address"/>
     <input type="numbers" placeholder="Phone Number" name="phone"/>
@@ -200,7 +200,6 @@ if (isset($_SESSION['username'])) {
     <input type="password" placeholder="Conform Password"/>
     <p><b>Already Have An Account?<a href="login.php">LOGIN</a></b></p>
     <input type="Submit" value="SingUp" id="button" name="btnsubmit"/>
-    
    
   </div>
 </div>
