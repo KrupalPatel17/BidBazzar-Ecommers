@@ -15,7 +15,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'patelkrupal679@gmail.com'; // Your Gmail email address
-    $mail->Password   = 'gvoi wbtn whnu joic';        // Your Gmail password
+    $mail->Password   = '';        // Your Gmail password
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
    
