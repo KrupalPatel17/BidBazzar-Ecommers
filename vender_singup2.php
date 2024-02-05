@@ -22,20 +22,26 @@ use PHPMailer\PHPMailer\Exception;
       $vdshopgst=($_POST['vdshopgst']);
       $vdbank=($_POST['vdbank']);
       $vdshopacc=($_POST['vdshopacc']);
-
+      $select = "select user_id from tbl_user where username='$username'";
+      $result = mysqli_query($connect, $select);
+      $count = mysqli_num_rows($result);
+      if ($count > 0) {
+          echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
+      } else {
       $insert = "insert into tbl_vender values(0,'$vename','$vemail','$vaddress',$vphne,'$vuname','$encpassword','$vdshopnm',$vdshopno,'$vdshopadd',$vdshoppincode,$vdshopgst,'$vdbank',$vdshopacc)";
       if (mysqli_query($connect, $insert)){
          
 
-        
+
           $_SESSION['votp']=$votp;
           $_SESSION['vemail']=$vemail;
-          header("location:verification.php");
+          header("location:index.php");
       }
       else {
            echo "Fail" or die(mysqli_error($connect));
       }
   }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
