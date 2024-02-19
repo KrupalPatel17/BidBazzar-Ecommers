@@ -22,20 +22,69 @@ use PHPMailer\PHPMailer\Exception;
       $vdshopgst=($_POST['vdshopgst']);
       $vdbank=($_POST['vdbank']);
       $vdshopacc=($_POST['vdshopacc']);
-      $select = "select user_id from tbl_user where username='$username'";
-      $result = mysqli_query($connect, $select);
-      $count = mysqli_num_rows($result);
-      if ($count > 0) {
-          echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
-      } else {
+         $select = "select user_id from tbl_user where username='$username'";
+        $result = mysqli_query($connect, $select);
+        $count = mysqli_num_rows($result);
+        if ($count > 0) {
+            echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
+        } else {
       $insert = "insert into tbl_vender values(0,'$vename','$vemail','$vaddress',$vphne,'$vuname','$encpassword','$vdshopnm',$vdshopno,'$vdshopadd',$vdshoppincode,$vdshopgst,'$vdbank',$vdshopacc)";
       if (mysqli_query($connect, $insert)){
          
+        $votp= rand(111111,999999);
+
+        $body = "<p> Dear $vuname,<br>
+
+        Thank you for choosing bid Bazzere for your online shopping needs.<br>
+        To ensure the security of your account, we have initiated the verification process for your email address.<br><br>
+
+        Please find below your one-time password (OTP) for verification:<br><br>        
+
+        <b>OTP: <u>$votp</u></b><br><br>
+
+        Kindly use this OTP to verify your email address by entering it on the verification page.<br> 
+        If you did not initiate this process or have any concerns regarding the security of your <br>
+        account, please contact our customer support immediately.<br><br>
+
+        We appreciate your cooperation in maintaining the security of your account. If you <br>
+        have any further questions or require assistance, feel free to reach out to us.<br><br>
+
+        Best regards,<br><br>
+
+        Bid Bazzer Your Shopping Patner</p>";
+
+        require 'Mailer/vendor/autoload.php';
+        $mail = new PHPMailer(true);
+
+         try {
+            //Server settings
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'patelkrupal679@gmail.com'; // Your Gmail email address
+            $mail->Password   = 'gvoi wbtn whnu joic';        // Your Gmail password
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+            
+            //Recipients
+            $mail->setFrom('patelkrupal679@gmail.com', 'Bid Bazzer');
+            $mail->addAddress($vemail, $vuname);
+
+            //Content
+            $mail->isHTML(true);
+            $mail->Subject = ' Your One-Time Password (OTP) for Verification';
+            $mail->Body    = "<p> $body </p>";
+
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
 
 
           $_SESSION['votp']=$votp;
           $_SESSION['vemail']=$vemail;
-          header("location:index.php");
+          header("location:verification.php");
       }
       else {
            echo "Fail" or die(mysqli_error($connect));

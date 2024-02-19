@@ -44,7 +44,7 @@
                 <input type="text" placeholder="User Name" name="vusername"/>
                 <input type="password" placeholder="Password" name="vpassword"/>
                 <input type="password" placeholder="Conform Password"/>
-                <p><b>Already Have An Account?<a href="index.php">LOGIN</a></b></p>
+                <p><b>Already Have An Account?<a href="login.php">LOGIN</a></b></p>
                  <input type="Submit" value="Next" id="button" name="btnsubmit"/>
    
   </div>

@@ -12,6 +12,8 @@ if (isset($_SESSION['username'])) {
       if($otp==$cotp){
         
         header("location:index.php");
+        unset($_SESSION['otp']);
+        unset($_SESSION['email']);
     } else{
       echo '<script>alert("Your OTP Was Wrong Plase Try Againg")</script>';
     }
@@ -22,6 +24,8 @@ if (isset($_SESSION['username'])) {
     if($votp==$cotp){
       
       header("location:index.php");
+      unset($_SESSION['votp']);
+      unset($_SESSION['vemail']);
   } else{
     echo '<script>alert("Your OTP Was Wrong Plase Try Againg")</script>';
   }
