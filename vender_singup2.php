@@ -4,6 +4,11 @@
     use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception; 
 
+if (isset($_SESSION['username'])) {
+  header("location:vender_homepage.php");
+}    
+
+
     if(isset($_POST['btnsubmit'])){
 
       $vename=$_SESSION['vdname'];
@@ -22,12 +27,19 @@ use PHPMailer\PHPMailer\Exception;
       $vdshopgst=($_POST['vdshopgst']);
       $vdbank=($_POST['vdbank']);
       $vdshopacc=($_POST['vdshopacc']);
-         $select = "select user_id from tbl_user where username='$username'";
+         $select = "select vid from tbl_vender where vuser_name='$vuname'";
+         $uselect = "select user_id from tbl_user where username='$vuname'";
         $result = mysqli_query($connect, $select);
+        $uresult = mysqli_query($connect, $uselect);
         $count = mysqli_num_rows($result);
+        $ucount = mysqli_num_rows($uresult);
         if ($count > 0) {
             echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
-        } else {
+        }
+        elseif ($ucount > 0) {
+          echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
+      }
+        else {
       $insert = "insert into tbl_vender values(0,'$vename','$vemail','$vaddress',$vphne,'$vuname','$encpassword','$vdshopnm',$vdshopno,'$vdshopadd',$vdshoppincode,$vdshopgst,'$vdbank',$vdshopacc)";
       if (mysqli_query($connect, $insert)){
          

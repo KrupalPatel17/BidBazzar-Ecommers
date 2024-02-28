@@ -7,7 +7,8 @@ include("connect.php");
 
 if (isset($_SESSION['username'])) {
     header("location:home.php");
-    }    
+}    
+
      if (isset($_POST['btnsubmit'])) {
         $email = $_POST['email'];
         $address = $_POST['address'];
@@ -16,11 +17,18 @@ if (isset($_SESSION['username'])) {
         $password = $_POST['password'];
         $encpassword = md5( $password);
         $select = "select user_id from tbl_user where username='$username'";
+        $vselect = "select vid from tbl_vender where vuser_name='$username'";
         $result = mysqli_query($connect, $select);
+        $vresult = mysqli_query($connect, $vselect);
         $count = mysqli_num_rows($result);
+        $vcount = mysqli_num_rows($vresult);
         if ($count > 0) {
             echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
-        } else {
+        }
+        elseif ($vcount > 0){
+            echo '<script>alert("Error: User Name Is Already Registered Please Take Another")</script>';
+        }
+         else {
             $insert = "insert into tbl_user values(0,'$email','$address',$phone,'$username','$encpassword')";
             if (mysqli_query($connect, $insert)){
                 

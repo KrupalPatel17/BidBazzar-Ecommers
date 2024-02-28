@@ -1,6 +1,11 @@
 <?php
  session_start();
  include("connect.php");
+
+ if (isset($_SESSION['username'])) {
+    header("location:vender_homepage.php");
+}    
+
     if(isset($_POST['btnsubmit'])){
         $vname=($_POST['vdname']);
         $vemail=($_POST['vdemail']);

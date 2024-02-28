@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-  header("location:home.php");
+ header("location:home.php");
 }
 
   if(isset($_POST['btnsubmit'])){
@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
       $otp=$_SESSION['otp'];
       if($otp==$cotp){
         
-        header("location:index.php");
+        header("location:login.php");
         unset($_SESSION['otp']);
         unset($_SESSION['email']);
     } else{
@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) {
     $votp=$_SESSION['votp'];
     if($votp==$cotp){
       
-      header("location:index.php");
+      header("location:login.php");
       unset($_SESSION['votp']);
       unset($_SESSION['vemail']);
   } else{

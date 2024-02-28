@@ -1,28 +1,35 @@
 <?php  
  session_start();
 include("connect.php");
-   if (isset($_SESSION['username'])) {
-        header("location:home.php");
-    }
+  if (isset($_SESSION['username'])) {
+      header("location:home.php");
+   }
+   if (isset($_SESSION['vusername'])) {
+   header("location:vender_homepage.php");
+}
     if (isset($_POST['btnsubmit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $select = "SELECT username,password FROM tbl_user WHERE username='$username'";
-        $vselect = "SELECT vuser_name,vpassword FROM tbl_vender WHERE vuser_name='$username'";
+        $select = "SELECT user_id,username,password FROM tbl_user WHERE username='$username'";
+        $vselect = "SELECT vid,vuser_name,vpassword FROM tbl_vender WHERE vuser_name='$username'";
         $check = mysqli_query($connect, $select);
         $vcheck = mysqli_query($connect, $vselect);
         $result = mysqli_fetch_assoc($check);
         $vresult = mysqli_fetch_assoc($vcheck);
+        $userid=$result['user_id'];
         $user = $result['username'];
-         $encpass = $result['password'];
+        $encpass = $result['password'];
 
+         $veid = $vresult['vid'];
          $vuser = $vresult['vuser_name'];
          $vencpass = $vresult['vpassword'];
          if (mysqli_num_rows($check)>0) {
                 $fpass=md5($password);
-                if($fpass=$encpass){
+                if($fpass==$encpass){
+                    
                     $_SESSION['username'] = $username;
-                    $_SESSION['userid'] = $row[0];
+                    $_SESSION['users_id'] =  $userid;
+                
                     header("location:home.php");
             }else{
             echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
@@ -31,9 +38,9 @@ include("connect.php");
 
             if (mysqli_num_rows($vcheck)>0) {
                 $fpass=md5($password);
-                if($fpass=$vencpass){
+                if($fpass==$vencpass){
                     $_SESSION['vusername'] = $username;
-                    $_SESSION['vid'] = $row[0];
+                    $_SESSION['vender_id'] = $veid  ;
                     header("location:vender_homepage.php");
             }else{
             echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
