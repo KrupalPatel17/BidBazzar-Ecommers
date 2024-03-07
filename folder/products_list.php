@@ -14,13 +14,14 @@ include("connect.php");
 <body>
     <center>
         <h1>Welcome </h1>
-        <a href="vendor_homepage.php">Add Products</a>
+        <a href="vender_homepage[1].php">Add Products</a>
         <h2>PRODUCTS LIST</h2>
         <table border="1">
             <tr>
                 <th>SNO.</th>
                 <th>P_ID</th>
                 <th>P_NAME</th>
+                <th>P_IMAGE</th>
                 <th>P_CATEGORY</th>
                 <th>P_DETAIL</th>
                 <th>P_QUANTITY</th>
@@ -32,7 +33,16 @@ include("connect.php");
             $count=mysqli_num_rows($result);
             if ($count>0){
                 while($rows=$result->fetch_assoc()){
-                    echo "<tr><td>".$rows["1"]."</td><td>".$rows["product_id"]."</td><td>".$rows["p_name"]."</td><td>".$rows["category"]."</td><td>".$rows["p_detail"]."</td><td>".$rows["p_quantity"]."</td><td>".$rows["p_price"]."</td></tr>";
+                    echo "<tr>
+                    <td>".$rows["1"]."</td>
+                    <td>".$rows["product_id"]."</td>
+                    <td>".$rows["p_name"]."</td>
+                    <td><img src='".$rows["p_img"]."' height='100px' width='100px'></td>
+                    <td>".$rows["category"]."</td>
+                    <td>".$rows["p_detail"]."</td>
+                    <td>".$rows["p_quantity"]."</td>
+                    <td>".$rows["p_price"]."</td>
+                    </tr>";
 
                 }
                 echo "</table>";

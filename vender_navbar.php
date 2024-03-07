@@ -12,7 +12,9 @@
          font-family: Arial, sans-serif;
 
          }
-
+         #h{
+            font-weight: bold;
+         }
          .navbar {
          background-color: rgb(0 0 0 / 41%); /* Add a semi-transparent black background */
          backdrop-filter: blur(10px);
@@ -215,7 +217,7 @@
               <div class="logo">
                   <table>
                           <tr>
-                             <td><a href="vender_homepage.php"><h2>Bid</h2></a></td><td> <a href="vender_homepage.php"><img src="img/logo.png"  alt="Rotating Image" class="rotating-logo"></a></td> <td><a href="vender_homepage.php"><h2>Bazzar</h2></a></td>
+                             <td><a href="vender_homepage.php"><h2 id="h">Bid</h2></a></td><td> <a href="vender_homepage.php"><img src="bgimgs/logo.png"  alt="Rotating Image" class="rotating-logo"></a></td> <td><a href="vender_homepage.php"><h2 id="h">Bazzar</h2></a></td>
                           </tr>
                   </table>
               </div>
@@ -228,13 +230,13 @@
           <ul class="nav-links" >
               <li><a href="vender_product.php">Products <i class="ri-product-hunt-line"></i></a></li>
               <li><a href="#">Auction <i class="ri-auction-line"></i></a></li>
-              <li><a href="vender_profil.php">Profile<i class="ri-file-user-line"></i></a></li>
-              <li><a href="aboutus.php">About us <i class="ri-speak-line"></i></a></li>
+              <li><a href="vender_profil.php?bid=<?php include("connect.php"); $select="select * from tbl_vender where vid=$_SESSION[vender_id]"; $result = mysqli_query($connect, $select);$row = mysqli_fetch_array($result); echo $row[0];?>;">Profile<i class="ri-file-user-line"></i></a></li>
+              <li><a href="vender_aboutus.php">About us<i class="ri-speak-line"></i></a></li>
               <li id="search-icon"><a href="#" onclick="toggleSearch()">Search <i class="ri-search-line"></i></a></li>
             
           </ul>
           <div class="search-bar">
-              <input type="text" placeholder="Search...">
+              <input type="text" placeholder="Search..." id="search">
               <span class="close-btn" onclick="toggleSearch()">&times;</span>
           </div>
       </nav>
@@ -251,9 +253,14 @@
      }
      
         </script>
+
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      
+      <script>
+      $(document).ready(function(){
 
-
+      });
+      </script> -->
 
 
 

@@ -64,6 +64,7 @@ echo '<script>alert("Your Account Has Been Deleted Successfully")</script>';
       background-color: #2C3E50;
       color: white;
     }
+   
     .container {
       margin-top: 50px;
     }
@@ -80,6 +81,12 @@ echo '<script>alert("Your Account Has Been Deleted Successfully")</script>';
     }
     .btn {
       width: 100%;
+    }
+    #del{
+      background-color: #ffb6bd;
+      color:red;
+      font-weight: bold;
+      border: 1px solid #ffb6bd;
     }
   </style>
 </head>
@@ -111,14 +118,23 @@ echo '<script>alert("Your Account Has Been Deleted Successfully")</script>';
               <textarea class="form-control" id="address" rows="3" placeholder="Enter address" name="address"><?php echo $data[2]; ?></textarea>
             </div>
             <input type="submit" class="btn btn-primary"  value="Save Changes" name="btnsave">
-            <input type="submit" class="btn btn-danger mt-3"  value="Delete Account" name="btndelete">
+            <input type="submit" class="btn btn-danger mt-3"  value="Delete Account" name="btndelete" onclick="return checkdelete()" id="del">
             <input type="submit" class="btn btn-secondary mt-3"  name="btnlogout"  value="Logout"> 
         
         </div>
       </div>
     </div>
   </div>
-
+  <script>
+        function checkdelete(){
+          if(!confirm("Are You Sure To Want Delete An Account")){
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+      </script>
 
 
 </form>

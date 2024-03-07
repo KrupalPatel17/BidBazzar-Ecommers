@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #800080;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #800080;
+        }
 
-    .container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100vh;
-    }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
 
-    .login-option {
-        width: 44%;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        color: #fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+        .login-option {
+            width: 44%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    .login-option:hover {
-        transform: scale(1.05);
-    }
+        .login-option:hover {
+            transform: scale(1.05);
+        }
 
-    .login-user {
-        background-color: #A569BD;
-    }
+        .login-user {
+            background-color: #A569BD;
+        }
 
-    .login-vendor {
-        background-color: #2C3E50;
-    }
+        .login-vendor {
+            background-color: #2C3E50;
+        }
 
-    .login-option h2 {
-        margin: 0;
-        padding-bottom: 10px;
-    }
-</style>
+        .login-option h2 {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="login-option login-user">
-        <h2>SingUp as User</h2>
-        <p>Click here to SingUp as a User</p>
-        <a href="singup.php" style="color: #fff; text-decoration: none;">SingUp</a>
+    <div class="container">
+        <div class="login-option login-user">
+            <h2>SingUp as User</h2>
+            <p>Click here to SingUp as a User</p>
+            <a href="singup.php" style="color: #fff; text-decoration: none;">SingUp</a>
+        </div>
+        <div class="login-option login-vendor">
+            <h2>SingUp as Vendor</h2>
+            <p>Click here to SingUp as a Vendor</p>
+            <a href="vender_singup.php" style="color: #fff; text-decoration: none;">SingUp</a>
+        </div>
     </div>
-    <div class="login-option login-vendor">
-        <h2>SingUp as Vendor</h2>
-        <p>Click here to SingUp as a Vendor</p>
-        <a href="vender_singup.php" style="color: #fff; text-decoration: none;">SingUp</a>
-    </div>
-</div>
 
 </body>
+
 </html>

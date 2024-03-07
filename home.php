@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
         }
 
         body {
-            background-image: url("img/bg.jpg");
+            background-image: url("bgimgs/bg.jpg");
             background-repeat: no-repeat;
             width: 100%;
             height: 100vh;
@@ -72,8 +72,7 @@ if (!isset($_SESSION['username'])) {
             transition: all ease 0.5s;
         }
         .btnstart:hover{
-            width:36%;
-            height:6vh;
+          transform: scale(1.05);
             background-color:#6b3eff;
             filter:drop-shadow(1px 1px 10px rgb(255 255 255 / 90%));
             transition: all ease 0.5s;
