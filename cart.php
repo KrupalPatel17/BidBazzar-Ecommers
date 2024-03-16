@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("location:login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +24,7 @@
 
         .add-to-cart-container {
             max-width: 100%;
+            height: 100vh;
             background-color: #9d9d9d;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -90,7 +98,7 @@
         }
 
         .product-image img {
-            max-width: 200px;
+            max-width: 180px;
             display: block;
             margin: 0 auto;
             mix-blend-mode: darken;

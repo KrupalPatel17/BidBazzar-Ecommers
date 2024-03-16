@@ -114,7 +114,7 @@ if (isset($_POST['btnsubmit'])) {
                 <h2><b>Bid Bazzar</b></h2>
                 <input type="email" placeholder="Email" name="email" />
                 <input type="text" placeholder="Address" name="address" />
-                <input type="numbers" placeholder="Phone Number" name="phone" />
+                <input type="numbers" placeholder="Phone Number" name="phone" maxlength="10" />
                 <input type="text" placeholder="User Name" name="username" />
                 <input type="password" placeholder="Password" name="password" />
                 <input type="password" placeholder="Conform Password" />

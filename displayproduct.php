@@ -3,6 +3,10 @@ session_start();
 include("connect.php");
 include("navbar2.php");
 
+if (!isset($_SESSION['username'])) {
+    header("location:login.php");
+}
+
 $pid = $_GET['pids'];
 
 ?>
@@ -19,7 +23,7 @@ $pid = $_GET['pids'];
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color:#C0C0C0;
+            background-color: #C0C0C0;
         }
 
         .product-container {
@@ -45,7 +49,7 @@ $pid = $_GET['pids'];
             border-radius: 10px;
             transition: all ease 0.5s;
             filter: drop-shadow(4px 4px 5px black);
-           
+
         }
 
         .product-image img:hover {
@@ -97,10 +101,10 @@ $pid = $_GET['pids'];
             transform: scale(1.05);
         }
 
-        #addtocart{
-        background-color: #acd4ff;
-        color:#007bff;
-        font-weight: bold;
+        #addtocart {
+            background-color: #acd4ff;
+            color: #007bff;
+            font-weight: bold;
         }
 
         @media screen and (max-width: 768px) {

@@ -2,24 +2,22 @@
 session_start();
 include("connect.php");
 
-// if (!isset($_SESSION['username'])) {
-//     header("location:login.php");
-// }
-include("vender_navbar.php"); 
+if (!isset($_SESSION['vusername'])) {
+    header("location:login.php");
+}
+include("vender_navbar.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link
-href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <style>
         /* Custom styles */
@@ -27,11 +25,13 @@ rel="stylesheet"
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
+
         .jumbotron {
             background-color: #343a40;
             color: #fff;
@@ -39,6 +39,7 @@ rel="stylesheet"
             margin-bottom: 30px;
             border-radius: 0;
         }
+
         .feedback-button {
             position: fixed;
             bottom: 20px;
@@ -53,27 +54,34 @@ rel="stylesheet"
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .feedback-button:hover {
             background-color: #0056b3;
         }
-        .navbar{
-            background-color: #343a40; /* Add a semi-transparent black background */
-         backdrop-filter: blur(10px);
-         border-radius: 0px;
+
+        .navbar {
+            background-color: #343a40;
+            /* Add a semi-transparent black background */
+            backdrop-filter: blur(10px);
+            border-radius: 0px;
         }
-        .navbar:hover{
-         background-color:#343a40bd;
-         box-shadow:1px 1px 50px #343a40bd;
-         }
-         a{
+
+        .navbar:hover {
+            background-color: #343a40bd;
+            box-shadow: 1px 1px 50px #343a40bd;
+        }
+
+        a {
             list-style: none;
-         text-decoration: none;
-         }
-         a:hover{
-            text-decoration: none;    
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
         }
     </style>
 </head>
+
 <body>
     <!-- Page Title -->
     <div class="jumbotron text-center">
@@ -97,18 +105,19 @@ rel="stylesheet"
                 <p class="text-center">This is where you would integrate the auction feature.</p>
             </section>
         </div>
-		
+
     </main>
-	<footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-3">
         <div class="container">
             <p>&copy; 2024 E-Commerce Site. All rights reserved.</p>
         </div>
     </footer>
     <!-- Feedback Button -->
-   
+
     <!-- Bootstrap JS, Popper.js, jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

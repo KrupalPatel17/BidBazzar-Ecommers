@@ -276,7 +276,7 @@
    </div>
    <ul class="nav-links">
       <li><a href="cart.php">Cart <i class="ri-shopping-cart-2-line" id="i"></i></a></li>
-      <li><a href="#">Auction <i class="ri-auction-line"></i></a></li>
+      <li><a href="auction.php">Auction <i class="ri-auction-line"></i></a></li>
       <li><a href="profil.php?bid=<?php include("connect.php");
                                     $select = "select * from tbl_user where user_id=$_SESSION[users_id]";
                                     $result = mysqli_query($connect, $select);

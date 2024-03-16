@@ -11,8 +11,11 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(360deg, #2196f3, #fff, #9c27b0);
-            width: 100%;
+            background-color: #f0f0f0;
+            background-image: url('bgimgs/p.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;/
         }
 
         .container {
@@ -23,7 +26,7 @@
         }
 
         .slider-container {
-            box-shadow: 1px 1px 5px black;
+            box-shadow: 3px 3px 8px black;
             width: 70%;
             height: 70vh;
             overflow: hidden;
@@ -31,10 +34,12 @@
             transition: all 1s ease;
             margin-top: 20px;
             margin-bottom: 50px;
+            border: 2px solid black;
         }
 
         .slider-container:hover {
-            box-shadow: 3px 3px 8px black;
+            transform: scale(1.03);
+            box-shadow: 10px 10px 13px black;
         }
 
         .slider {
@@ -59,12 +64,21 @@
             width: 14%;
             height: 30vh;
             border-radius: 50%;
+            border: 3px solid #cfcfcf;
+            outline: 3px solid #5d5d5d;
             overflow: hidden;
             cursor: pointer;
             margin: 10px;
-            transition: transform 0.3s ease;
-            filter: drop-shadow(4px 4px 5px black);
+            transition: all ease 0.8s;
+            filter: drop-shadow(8px 8px 7px black);
         }
+
+        .category:hover {
+            border: 4px solid #5d5d5d;
+            outline: 4px solid #cfcfcf;
+            transform: scale(1.05);
+        }
+
 
         .category img {
             width: 100%;
@@ -141,6 +155,9 @@
     session_start();
     include("connect.php");
     include("navbar2.php");
+    if (!isset($_SESSION['username'])) {
+        header("location:login.php");
+    }
     ?>
 
     <div class="categories">
@@ -151,7 +168,7 @@
         </div>
         <div class="category" data-name="Electronics">
             <a href="gameing_p.php"><img src="bgimgs/gc.jpeg" alt="Electronics">
-                <div class="overlay">Gameing</div>
+                <div class="overlay">Gaming</div>
             </a>
         </div>
         <div class="category" data-name="Electronics">

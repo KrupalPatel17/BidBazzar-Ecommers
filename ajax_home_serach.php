@@ -19,12 +19,21 @@
                 if ($count % 3 == 0 && $count != 0) {
                     echo "<div class='clearfix'></div>"; // Clear float after every third product
                 }
-                echo "<a href='displayproduct.php?pids={$row["product_id"]}'><div class='product'>";
-                echo "<img src='" . $row['p_image'] . "' alt='" . $row['name'] . "'><br>";
-                echo "<h2>" . $row['p_name'] . "</h2>";
-                echo "<p>Price:" . $row['p_price'] . "</p>";
-                echo "</div></a>";
-                $count++; // Increment count for each product
+                if (isset($_SESSION['username'])) {
+                    echo "<a href='displayproduct.php?pids={$row["product_id"]}'><div class='product'>";
+                    echo "<img src='" . $row['p_image'] . "' alt='" . $row['name'] . "'><br>";
+                    echo "<h2>" . $row['p_name'] . "</h2>";
+                    echo "<p>Price:" . $row['p_price'] . "</p>";
+                    echo "</div></a>";
+                    $count++; // Increment count for each product
+                } else {
+                    echo "<a href='wl_display_p.php?pids={$row["product_id"]}'><div class='product'>";
+                    echo "<img src='" . $row['p_image'] . "' alt='" . $row['name'] . "'><br>";
+                    echo "<h2>" . $row['p_name'] . "</h2>";
+                    echo "<p>Price:" . $row['p_price'] . "</p>";
+                    echo "</div></a>";
+                    $count++; // Increment count for each product
+                }
             }
             echo "</div>"; // Close products container
             // Free result set

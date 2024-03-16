@@ -96,16 +96,25 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: all ease 0.3s;
       font-size: 110%;
 
    }
 
    .nav-links li a:hover {
-      color: #1ebfdd;
+      color: #00d7ff;
       text-shadow: 1px 0px 1px #FFF;
 
    }
+
+   .nav-links li {
+      transition: all ease 0.5s;
+   }
+
+   .nav-links li:hover {
+      transform: scale(1.09);
+   }
+
 
    .search-bar {
       display: none;
@@ -147,19 +156,11 @@
       text-decoration: none;
    }
 
-   li {
+   .logo {
       transition: all ease 0.5s;
    }
 
-   li:hover {
-      transform: scale(1.09);
-   }
-
-   .logo{
-      transition: all ease 0.5s;
-   }
-
-   .logo:hover{
+   .logo:hover {
       transform: scale(1.05);
    }
 
@@ -191,6 +192,29 @@
 
       .nav-links li {
          margin: 10px 0;
+      }
+
+      .nav-links li a {
+         color: white;
+         text-decoration: none;
+         font-weight: bold;
+         transition: all ease 0.3s;
+         font-size: 110%;
+
+      }
+
+      .nav-links li a:hover {
+         color: #00d7ff;
+         text-shadow: 1px 0px 1px #FFF;
+
+      }
+
+      .nav-links li {
+         transition: all ease 0.5s;
+      }
+
+      .nav-links li:hover {
+         transform: scale(1.09);
       }
 
       .search-bar {
@@ -238,7 +262,8 @@
                <td><a href="wl_product.php">
                      <h2>Bid</h2>
                   </a></td>
-               <td> <a href="wl_product.php"><img src="bgimgs/logo.png" alt="Rotating Image" class="rotating-logo"></a></td>
+               <td> <a href="wl_product.php"><img src="bgimgs/logo.png" alt="Rotating Image" class="rotating-logo"></a>
+               </td>
                <td><a href="wl_product.php">
                      <h2>Bazzar</h2>
                   </a></td>
