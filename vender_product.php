@@ -11,7 +11,7 @@ if (!isset($_SESSION['vusername'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Table</title>
+  <title>Bid Bazzar</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
@@ -24,6 +24,7 @@ if (!isset($_SESSION['vusername'])) {
 
     body {
       background-color: #2d3e4e;
+      padding-top: 9%;
     }
 
     .table {

@@ -14,7 +14,7 @@ include("vender_navbar.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Bid Bazzar </title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
@@ -38,6 +38,7 @@ include("vender_navbar.php");
             padding: 40px;
             margin-bottom: 30px;
             border-radius: 0;
+            padding-top: 5%;
         }
 
         .feedback-button {
@@ -59,17 +60,6 @@ include("vender_navbar.php");
             background-color: #0056b3;
         }
 
-        .navbar {
-            background-color: #343a40;
-            /* Add a semi-transparent black background */
-            backdrop-filter: blur(10px);
-            border-radius: 0px;
-        }
-
-        .navbar:hover {
-            background-color: #343a40bd;
-            box-shadow: 1px 1px 50px #343a40bd;
-        }
 
         a {
             list-style: none;
@@ -94,10 +84,11 @@ include("vender_navbar.php");
     <main>
         <div class="container">
             <section id="about-section">
-                <h2 class="text-center">About Our Company</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p>BidBazzar is a website where Users can browse and purchase a wide range of products,</p>
+                <p>and they also have the exciting option of participating in real-time auctions for exclusive items.</p>
+                <p>That's the beauty of a hybrid e-commerce website that combines live auctions with traditional product sales.</p>
+                <p>The platform offers a user-friendly interface, secure payment options, and robust auction functionalities, </p>
+                <p>creating a diverse and engaging online marketplace. </p>
             </section>
             <section id="auction-section">
                 <h2 class="text-center">Auction Feature</h2>

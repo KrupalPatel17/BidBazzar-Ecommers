@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connect.php");
-include("navbar2.php");
+
 
 $uid = $_SESSION['users_id'];
 $sql = "SELECT * FROM tbl_addtocart WHERE user_id='$uid'";

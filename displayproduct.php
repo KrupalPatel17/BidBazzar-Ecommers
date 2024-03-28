@@ -16,7 +16,7 @@ $pid = $_GET['pids'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <style>
         body {
@@ -49,12 +49,14 @@ $pid = $_GET['pids'];
             border-radius: 10px;
             transition: all ease 0.5s;
             filter: drop-shadow(4px 4px 5px black);
+            /* mix-blend-mode: darken; */
 
         }
 
         .product-image img:hover {
             transform: scale(1.06);
             filter: drop-shadow(3px 3px 6px black);
+
         }
 
         .product-info {

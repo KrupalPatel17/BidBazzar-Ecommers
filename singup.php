@@ -100,26 +100,64 @@ if (isset($_POST['btnsubmit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="singup.css">
+
+    <script>
+        function validateForm() {
+            var email = document.forms["signupForm"]["email"].value;
+            var address = document.forms["signupForm"]["address"].value;
+            var phone = document.forms["signupForm"]["phone"].value;
+            var username = document.forms["signupForm"]["username"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var confirmPassword = document.forms["signupForm"]["confirm_password"].value;
+
+            // Email validation
+            var emailRegex = /\S+@\S+\.\S+/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            // Phone number validation
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Invalid phone number. Please enter 10 digits.");
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Invalid phone number. Please enter exactly 10 digits.");
+                return false;
+            }
+
+            // Password match validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
 </head>
 
 <body>
 
-    <form action="" method="POST">
-        <div class="container" onclick="onclick">
+    <form name="signupForm" action="" method="POST" onsubmit="return validateForm()">
+        <div class="container">
             <div class="top"></div>
             <div class="bottom"></div>
 
             <div class="center">
 
                 <h2><b>Bid Bazzar</b></h2>
-                <input type="email" placeholder="Email" name="email" />
-                <input type="text" placeholder="Address" name="address" />
-                <input type="numbers" placeholder="Phone Number" name="phone" maxlength="10" />
-                <input type="text" placeholder="User Name" name="username" />
-                <input type="password" placeholder="Password" name="password" />
-                <input type="password" placeholder="Conform Password" />
+                <input type="email" placeholder="Email" name="email" required />
+                <input type="text" placeholder="Address" name="address" required />
+                <input type="text" placeholder="Phone Number" name="phone" maxlength="10" required />
+                <input type="text" placeholder="User Name" name="username" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <input type="password" placeholder="Confirm Password" name="confirm_password" required />
                 <p><b>Already Have An Account?<a href="login.php">LOGIN</a></b></p>
-                <input type="Submit" value="SingUp" id="button" name="btnsubmit" />
+                <input type="submit" value="SignUp" id="button" name="btnsubmit" />
 
             </div>
         </div>

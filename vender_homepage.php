@@ -40,11 +40,12 @@ if (isset($_POST['btnadd'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <title>Document</title>
+  <title>Bid Bazzar</title>
 
   <style>
     body {
       background-color: #2C3E50;
+      padding-top: 5%;
     }
 
     .form-container {
@@ -54,6 +55,7 @@ if (isset($_POST['btnadd'])) {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       padding: 30px;
       transition: all 0.3s ease;
+      
     }
 
     .form-container:hover {

@@ -5,9 +5,9 @@ include("connect.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-if (isset($_SESSION['username'])) {
-  header("location:vender_homepage.php");
-}
+// if (isset($_SESSION['username'])) {
+//   header("location:vender_homepage.php");
+// }
 
 
 if (isset($_POST['btnsubmit'])) {
@@ -46,7 +46,7 @@ if (isset($_POST['btnsubmit'])) {
 
       $body = "<p> Dear $vuname,<br>
 
-        Thank you for choosing bid Bazzere for your online shopping needs.<br>
+        Thank you for choosing bid Bazzar for your online shopping needs.<br>
         To ensure the security of your account, we have initiated the verification process for your email address.<br><br>
 
         Please find below your one-time password (OTP) for verification:<br><br>        
@@ -62,7 +62,7 @@ if (isset($_POST['btnsubmit'])) {
 
         Best regards,<br><br>
 
-        Bid Bazzer Your Shopping Patner</p>";
+        Bid Bazzar Your Shopping Patner</p>";
 
       require 'Mailer/vendor/autoload.php';
       $mail = new PHPMailer(true);
@@ -78,7 +78,7 @@ if (isset($_POST['btnsubmit'])) {
         $mail->Port = 587;
 
         //Recipients
-        $mail->setFrom('patelkrupal679@gmail.com', 'Bid Bazzer');
+        $mail->setFrom('patelkrupal679@gmail.com', 'Bid Bazzar');
         $mail->addAddress($vemail, $vuname);
 
         //Content
@@ -109,17 +109,66 @@ if (isset($_POST['btnsubmit'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="singup.css">
+
+  <script>
+    function validateForm() {
+      var vdshopnm = document.forms["signupForm"]["vdshopnm"].value;
+      var vdshopno = document.forms["signupForm"]["vdshopno"].value;
+      var vdshopadd = document.forms["signupForm"]["vdshopadd"].value;
+      var vdshoppincode = document.forms["signupForm"]["vdshoppincode"].value;
+      var vdshopgst = document.forms["signupForm"]["vdshopgst"].value;
+      var vdbank = document.forms["signupForm"]["vdbank"].value;
+      var vdshopacc = document.forms["signupForm"]["vdshopacc"].value;
+
+      if (vdshopnm == "") {
+        alert("Shop Name must be filled out");
+        return false;
+      }
+
+      if (vdshopno == "") {
+        alert("Shop's Number must be filled out");
+        return false;
+      }
+
+      if (vdshopadd == "") {
+        alert("Shop Address must be filled out");
+        return false;
+      }
+
+      if (vdshoppincode == "") {
+        alert("Pincode must be filled out");
+        return false;
+      }
+
+      if (vdshopgst == "") {
+        alert("GST No. must be filled out");
+        return false;
+      }
+
+      if (vdbank == "") {
+        alert("Bank Name must be filled out");
+        return false;
+      }
+
+      if (vdshopacc == "") {
+        alert("Account No. must be filled out");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+
 </head>
 
 <body>
 
-  <form action="" method="POST">
+  <form name="signupForm" action="" method="POST" onsubmit="return validateForm()">
     <div class="container" onclick="onclick">
       <div class="top"></div>
       <div class="bottom"></div>
-
       <div class="center">
-
         <h2><b>Bid Bazzar</b></h2>
         <input type="text" name="vdshopnm" placeholder="Shop Name">
         <input type="text" name="vdshopno" placeholder="Shop's Number">
@@ -129,7 +178,6 @@ if (isset($_POST['btnsubmit'])) {
         <input type="text" name="vdbank" placeholder="Bank Name">
         <input type="number" name="vdshopacc" placeholder="Account No.">
         <input type="Submit" value="SingUp" id="button" name="btnsubmit" />
-
       </div>
     </div>
   </form>

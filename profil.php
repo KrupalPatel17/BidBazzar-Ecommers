@@ -47,7 +47,7 @@ if (isset($_GET['bid'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Bid Bazzar</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
@@ -64,12 +64,14 @@ if (isset($_GET['bid'])) {
 
   .container {
     margin-top: 50px;
+    padding-top: 4%;
   }
 
   .profile-form {
     background-color: #800080;
     padding: 30px;
     border-radius: 10px;
+  
   }
 
   .form-group {

@@ -8,16 +8,18 @@ include("connect.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="product.css" rel="stylesheet">
     <style>
+      
         .product {
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 20px;
             width: calc(33.33% - 20px);
-            height: 80vh;
+            height: 88vh;
             box-sizing: border-box;
             background-color: #fff;
             backdrop-filter: blur(10px);
@@ -27,24 +29,27 @@ include("connect.php");
             border-radius: 10px;
             color: #000;
         }
-        #remove_btn{
-            width: 40%;
-            height: 6vh;
-            margin: 3% 28%;
+
+        #remove_btn, #end_btn {
+            margin: 0.70%;
             font-weight: bold;
-            background-color: #ffd3d3;
-            border: 2px solid darkred;
-            color:red;
             border-radius: 5px;
-            transition: all ease 0.3s;
-            box-shadow: 4px 4px 2px gray;
-            transform: scale(1.05);
+            box-shadow: 1px 1px 2px gray;
         }
 
-        #remove_btn:hover{
-            transform: scale(1);
-            box-shadow: 1px 1px 1px gray;
+        .btn-group{
+            margin-left:9%;
         }
+      
+        #report_btn{
+            margin: 0.70% 9.50%;
+            width:80%;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 1px 1px 2px gray;
+        }
+      
+      
     </style>
 </head>
 
@@ -56,6 +61,10 @@ include("connect.php");
             if (!isset($_SESSION['vusername'])) {
                 header("location:login.php");
             }
+
+            // if(isset($_POST['btnreport'])){
+            //     header("location:vender_auction_report.php");
+            // }
             $id = $_SESSION['vender_id'];
 
             // Query to select products from your database
@@ -75,11 +84,19 @@ include("connect.php");
                         echo "<div class='product'>";
                         echo "<img src='" . $row['p_image'] . "' alt='" . $row['name'] . "'><br>";
                         echo "<h2>" . $row['p_name'] . "</h2>";
-                        echo "<p>Price:" . $row['p_price'] . "</p>";
-                        echo "<p>Auction Starting Price:" . $row['a_price'] . "</p>";
-                        echo "<p>Auction Starting Date:" . $row['date'] . "</p>";
-                        echo "<p>Auction Starting Starting:" . $row['time'] . "</p>";
-                        echo "<input type='submit' value='Remove Product' id='remove_btn' data-id='$row[a_id]'>";
+                        echo "<p>Price:" . $row['p_price'] ."<br>";
+                        echo "Auction Starting Price:" . $row['a_price']."<br>";
+                        echo "Auction Starting At: " .  $row['date'] ." ". $row['time'] . "</p>";
+                       // echo "<p>Auction Starting Starting:" . $row['time'] . "</p>";
+                        // echo "<input type='submit' value='Remove Product' class='btn btn-outline-danger' id='remove_btn' data-id='$row[a_id]'>  ";
+                        // echo "<input type='submit' value='End Auction' id='end_btn'  class='btn btn-outline-warning' data-ide='$row[a_id]' title='You Can Not End Your Auction If It Was Not Start';>";
+                        echo "<div class='btn-group' role='group' aria-label='Basic outlined example'>
+                        <input type='submit' value='Remove Product' class='btn btn-outline-danger' id='remove_btn' data-id='$row[a_id]'>  
+                        <input type='submit' value='End Auction' id='end_btn'  class='btn btn-outline-warning' data-ide='$row[a_id]' title='You Can Not End Your Auction If It Was Not Start';>
+                        </div>";
+                        echo "<a href='vender_auction_report.php?aids={$row["a_id"]}'><buttom type='submit' id='report_btn' class='btn btn-outline-info' data-ide='$row[a_id]' name='btnreport';>Auction Report</button></a>";
+                        echo "<input type='hidden' value='$row[time]' id='time' >";
+                       
                         //echo "<p>Auction Starting time: <span class='countdown' data-time='{$row['time']}' data-date='{$row['date']}'>Countdown</span></p>";
                         echo "</div>";
                         $count++; // Increment count for each product
@@ -124,6 +141,36 @@ include("connect.php");
                         console.log("Deletion cancelled.");
 
                     }
+                })
+
+                $(document).on("click", "#end_btn", function(){
+                    var confirmation = confirm("Are you sure you want to end auction?");
+                    var a_id = $(this).data("ide");
+                    // var time = $('#time').val();
+                    // var currentTime = $.datepicker.formatTime('H:i:s', new Date());
+                    //  //console.log(a_id);
+
+                    // if(currentTime > time){
+                    //     alert("After Auction Start You Will End It");
+                    // }else{
+                    if (confirmation) {
+                        $.ajax({
+                            url: "ajax_auction_end.php",
+                            type: "POST",
+                            data: {
+                                id: a_id,
+                            },
+                            success: function(data) {
+                                if (data == 1) {
+                                    alert("Auction Has Been Ended");
+                                }
+                            }
+                        })
+                    } else {
+                        console.log("End cancelled.");
+
+                    }
+                
                 })
             });
         </script>

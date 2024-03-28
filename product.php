@@ -1,18 +1,22 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <meta name="theme-color" content="#007bff"> 
+    <title>Bid Bazzar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding-top: 5.5%;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            background-image: url('bgimgs/p.jpg');
+            background-image: url('bgimgs/p\ \(3\).jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;/
@@ -60,6 +64,7 @@
         }
 
         .category {
+            
             position: relative;
             width: 14%;
             height: 30vh;
@@ -152,7 +157,7 @@
 
 <body>
     <?php
-    session_start();
+   
     include("connect.php");
     include("navbar2.php");
     if (!isset($_SESSION['username'])) {

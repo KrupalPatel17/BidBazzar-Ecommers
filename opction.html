@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Bid Bazzar</title>
     <style>
         body {
             margin: 0;
@@ -21,17 +21,18 @@
         }
 
         .login-option {
-            width: 44%;
+            width: 28%;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .login-option:hover {
             transform: scale(1.05);
+            box-shadow: 0px 1px 5px black;
         }
 
         .login-user {
@@ -39,6 +40,10 @@
         }
 
         .login-vendor {
+            background:linear-gradient(90deg,#A569BD, #2C3E50);
+        }
+
+        .login-again {
             background-color: #2C3E50;
         }
 
@@ -46,7 +51,7 @@
             margin: 0;
             padding-bottom: 10px;
         }
-        .btn,.sbtn{
+        .btn,.sbtn,.btnlogin{
             background-color: #A569BD;
             width: 20%;
             height: 6vh;
@@ -54,18 +59,28 @@
             border:2px solid white;
             transition: all ease 0.5s;
             font-weight: bold;
+            color: white;
         }
         .sbtn{
-            background-color: #2C3E50;
+            background:linear-gradient(90deg, #A569BD, #2C3E50);
         }
         .sbtn:hover{
-            background-color: #434547;
+            transform: scale(1.09);
+            background:linear-gradient(90deg,#df8dff, #17202a);
             color: white;
         }
         .btn:hover{
             transform: scale(1.09);
             background-color: #800080;
             color: aliceblue;
+        }
+        .btnlogin{
+            background-color: #2C3E50;
+        }
+        .btnlogin:hover{
+            transform: scale(1.09);
+            background-color: #434547;
+            color: white;
         }
     </style>
 </head>
@@ -83,7 +98,14 @@
             <p>Click here to SignUp as a Vendor</p>
             <a href="vender_singup.php" style="color: #fff; text-decoration: none;"><button class="sbtn">SignUp</button></a>
         </div>
+
+        <div class="login-option login-again">
+            <h2>Back To Login</h2>
+            <p>Click here to Login</p>
+            <a href="login.php" style="color: #fff; text-decoration: none;"><button class="btnlogin">Login</button></a>
+        </div>
     </div>
+  
 
 </body>
 

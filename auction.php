@@ -10,8 +10,10 @@ include("connect.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="product.css" rel="stylesheet">
     <style>
+        
         .product {
             border: 1px solid #ccc;
             padding: 10px;

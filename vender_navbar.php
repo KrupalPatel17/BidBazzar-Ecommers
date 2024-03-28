@@ -31,7 +31,9 @@
 
    .navbar:hover {
       background-color: rgb(0 0 0 / 31%);
-      box-shadow: 1px 1px 50px rgb(255 255 255 / 50%);
+      backdrop-filter: blur(13px);
+      /* box-shadow: 1px 1px 50px rgb(255 255 255 / 50%); */
+      box-shadow: 1px 1px 50px black;
    }
 
    .logo-container {
@@ -48,6 +50,7 @@
    }
 
    .logo h2:hover {
+      transform: scale(1.05);
       text-shadow: 0px 0px 5px#1ebfdd, 0px 0px 5px #1ebfdd, 0px 0px 5px#1ebfdd, 0px 0px 5px #1ebfdd;
    }
 
@@ -110,7 +113,6 @@
    .nav-links li a:hover {
       color: #00d7ff;
       text-shadow: 1px 0px 1px #FFF;
-
    }
 
    .search-bar {
@@ -151,6 +153,7 @@
 
    a:hover {
       text-decoration: none;
+
    }
 
    .nav-links li {
@@ -161,6 +164,31 @@
       transform: scale(1.09);
    }
 
+   #hello{
+      font-size: 130%;
+      font-weight: bold;
+      text-align: right;
+      color:#FFF;
+      filter: drop-shadow(1px 1px 5px #FFF);
+   }
+
+   #uname{
+      font-size: 130%;
+      font-weight: bold;
+      text-align: right;
+      color: #00d7ff;
+      filter: drop-shadow(1px 1px 5px  #00d7ff);
+   }
+
+   ::-webkit-scrollbar {
+      width: 7px;
+   }
+
+   ::-webkit-scrollbar-thumb {
+      background: darkgray;
+      /* color of the scroll thumb */
+   }
+   
    /* Media query for responsiveness */
    @media screen and (max-width: 768px) {
       .logo-container {
@@ -234,7 +262,7 @@
 </style>
 
 
-<nav class="navbar">
+<nav class="navbar fixed-top bg-body-tertiary">
    <div class="logo-container">
       <div class="logo">
          <table>
@@ -270,6 +298,10 @@
    <div class="search-bar">
       <input type="text" placeholder="Search..." id="search">
       <span class="close-btn" onclick="toggleSearch()">&times;</span>
+   </div>
+   <div>
+      <h6 id="hello">Hello,</h6>
+      <h6 id="uname"><?php echo $_SESSION['vusername']; ?></h6>
    </div>
 </nav>
 

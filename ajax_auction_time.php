@@ -46,3 +46,5 @@ if ($result = $connect->query($sql)) {
 
 // Close connection
 $connect->close();
+
+?>

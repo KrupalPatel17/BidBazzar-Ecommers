@@ -29,7 +29,7 @@ $pid = $_GET['pids'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -46,6 +46,7 @@ $pid = $_GET['pids'];
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
+            padding-top: 6%;
         }
 
         .product-details {
@@ -167,6 +168,16 @@ $pid = $_GET['pids'];
             animation: blink 1s infinite;
         }
 
+        a {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+
+        }
+
         @keyframes blink {
             0% {
                 opacity: 1;
@@ -225,7 +236,7 @@ $pid = $_GET['pids'];
 
 
                             &nbsp&nbsp&nbsp&nbsp&nbspEnter You Bid Price:
-                            <input type="number" id="num" class="form-control" value="<?php echo $row['a_price'] ?>" min="<?php $row['bid_price'] ?>" name="userInput" title="You Must Enter Price More Than ₹<?php echo $row['bid_price'] ?>" required>
+                            <input type="number" id="num" class="form-control" value="<?php echo $row['a_price'] ?>" min="<?php $row['bid_price'] ?>" name="userInput" title="You Must Enter Price More Than ₹<?php echo $row['a_price'] ?>" required>
                             <input type="hidden" id="num2" value="<?php echo $row['a_price'] ?>">
 
 
@@ -252,142 +263,146 @@ $pid = $_GET['pids'];
     <?php
 
 
-    //     $originalTime =  $row["time"];
+        //     $originalTime =  $row["time"];
 
-    //     // Convert the time string to a DateTime object
-    //     $dateTime = DateTime::createFromFormat('H:i:s', $originalTime);
+        //     // Convert the time string to a DateTime object
+        //     $dateTime = DateTime::createFromFormat('H:i:s', $originalTime);
 
-    //     // Add 1 hour to the DateTime object
-    //     $dateTime->modify('+1 hour');
-    //     $resultTime = $dateTime->format('H:i:s');
+        //     // Add 1 hour to the DateTime object
+        //     $dateTime->modify('+1 hour');
+        //     $resultTime = $dateTime->format('H:i:s');
 
-    //     date_default_timezone_set('Asia/Kolkata');
+        //     date_default_timezone_set('Asia/Kolkata');
 
-    //     $current_time = date('H:i:s');
+        //     $current_time = date('H:i:s');
 
-    //    if($resultTime<$current_time){
+        //    if($resultTime<$current_time){
 
-    //     $body = "<p> Dear $username,<br>
+        //     $body = "<p> Dear $username,<br>
 
-    //     Thank you for choosing bid Bazzere for your online shopping needs.<br>
-    //     To ensure the security of your account, we have initiated the verification process for your email address.<br><br>
+        //     Thank you for choosing bid Bazzere for your online shopping needs.<br>
+        //     To ensure the security of your account, we have initiated the verification process for your email address.<br><br>
 
-    //     Please find below your one-time password (OTP) for verification:<br><br>        
+        //     Please find below your one-time password (OTP) for verification:<br><br>        
 
-    //     <b>OTP: <u>$email</u></b><br><br>
+        //     <b>OTP: <u>$email</u></b><br><br>
 
-    //     Kindly use this OTP to verify your email address by entering it on the verification page.<br> 
-    //     If you did not initiate this process or have any concerns regarding the security of your <br>
-    //     account, please contact our customer support immediately.<br><br>
+        //     Kindly use this OTP to verify your email address by entering it on the verification page.<br> 
+        //     If you did not initiate this process or have any concerns regarding the security of your <br>
+        //     account, please contact our customer support immediately.<br><br>
 
-    //     We appreciate your cooperation in maintaining the security of your account. If you <br>
-    //     have any further questions or require assistance, feel free to reach out to us.<br><br>
+        //     We appreciate your cooperation in maintaining the security of your account. If you <br>
+        //     have any further questions or require assistance, feel free to reach out to us.<br><br>
 
-    //     Best regards,<br><br>
+        //     Best regards,<br><br>
 
-    //     Bid Bazzer Your Shopping Patner</p>";
+        //     Bid Bazzer Your Shopping Patner</p>";
 
-    // require 'Mailer/vendor/autoload.php';
-    // $mail = new PHPMailer(true);
+        // require 'Mailer/vendor/autoload.php';
+        // $mail = new PHPMailer(true);
 
-    // try {
-    //     //Server settings
-    //     $mail->isSMTP();
-    //     $mail->Host       = 'smtp.gmail.com';
-    //     $mail->SMTPAuth   = true;
-    //     $mail->Username   = 'patelkrupal679@gmail.com'; // Your Gmail email address
-    //     $mail->Password   = 'gvoi wbtn whnu joic';        // Your Gmail password
-    //     $mail->SMTPSecure = 'tls';
-    //     $mail->Port = 587;
+        // try {
+        //     //Server settings
+        //     $mail->isSMTP();
+        //     $mail->Host       = 'smtp.gmail.com';
+        //     $mail->SMTPAuth   = true;
+        //     $mail->Username   = 'patelkrupal679@gmail.com'; // Your Gmail email address
+        //     $mail->Password   = 'gvoi wbtn whnu joic';        // Your Gmail password
+        //     $mail->SMTPSecure = 'tls';
+        //     $mail->Port = 587;
 
-    //     //Recipients
-    //     $mail->setFrom('patelkrupal679@gmail.com', 'Bid Bazzer');
-    //     $mail->addAddress($email,  $username);
+        //     //Recipients
+        //     $mail->setFrom('patelkrupal679@gmail.com', 'Bid Bazzer');
+        //     $mail->addAddress($email,  $username);
 
-    //     //Content
-    //     $mail->isHTML(true);
-    //     $mail->Subject = ' Your One-Time Password (OTP) for Verification';
-    //     $mail->Body    = "<p> $body </p>";
+        //     //Content
+        //     $mail->isHTML(true);
+        //     $mail->Subject = ' Your One-Time Password (OTP) for Verification';
+        //     $mail->Body    = "<p> $body </p>";
 
-    //     $mail->send();
-    //     echo 'Message has been sent';
-    // } catch (Exception $e) {
-    //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    // }
-    //      } else{
-    //     echo "unmatch";
-    //    }
+        //     $mail->send();
+        //     echo 'Message has been sent';
+        // } catch (Exception $e) {
+        //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // }
+        //      } else{
+        //     echo "unmatch";
+        //    }
 
     ?>
  -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <script>
-            $(document).ready(function() {
+<script>
+    $(document).ready(function() {
+        // Function to fetch updated auction data from the server
+        function load() {
+            var ids = $("#aid").val();
+            $.ajax({
+                url: "ajax_after_auction.php",
+                type: "POST",
+                data: {
+                    ides: ids
+                },
+                success: function(data) {
+                    // Parse the JSON data received from the server
+                    var auctionData = JSON.parse(data);
 
-                function load() {
-                    var ids = $("#aid").val();
-                    $.ajax({
-                        url: "ajax_after_auction.php",
-                        type: "POST",
-                        data: {
-                            ides: ids
-                        },
-                        success: function(data) {
-                            console.log(data); // Replace the tbody content with the fetched data
-                        }
+                    // Update the "Max Bid By" input field value
+                    $('#bider').val(auctionData.username);
 
-                    });
-                };
-                load();
+                    // Update the "Enter Your Bid Price" input field value
+                    $('#num').val(auctionData.a_price);
+                    $('#num2').val(auctionData.a_price);
 
-                //     function load_auction_details() {
-                //         $.ajax({
-                //             url: "ajax_load_auction_details.php",
-                //             type: "POST",
-                //             success: function(data) {
-                //                 $("#load").html(data); // Replace the tbody content with the fetched data
-                //             }
-
-                //         });
-                //     };
-                //    load_auction_details();
-                setInterval(load, 1000);
-                $(document).on("click", "#bid", function() {
-                    var id = $(this).data("id");
-                    var bprise = $('#num').val();
-                    var bprise2 = $('#num2').val();
-                    console.log(id);
-                    if (bprise > bprise2) {
-                        $.ajax({
-                            url: "ajax_insert_bid.php",
-                            type: "POST",
-                            data: {
-                                ids: id,
-                                bp: bprise
-                            },
-                            success: function(data) {
-                                console.log(data);
-                                if (data == 1) {
-                                    alert("You Auction Price Has Been Save");
-                                } else {
-                                    alert("You Can Not Add Auction Price");
-                                }
-                            }
-                        });
+                    // Re-enable the bid button if necessary
+                    if (auctionData.bid_allowed) {
+                        $('#bid').prop('disabled', false);
                     } else {
-                        alert("You Must Enter Price More Than " + " " + "₹" + bprise2);
+                        $('#bid').prop('disabled', true);
                     }
-
-                })
+                }
             });
-        </script>
-        <!-- inc / dec js  -->
-        <!-- inc / dec js  -->
+        }
 
+        // Call the load function initially
+        load();
 
-        <!-- //Timer JS -->
+        // Set interval to call the load function every second
+        setInterval(load, 1000);
+
+        // Bid button click event
+        $(document).on("click", "#bid", function() {
+            var id = $(this).data("id");
+            var bprise = $('#num').val();
+            var bprise2 = $('#num2').val();
+            console.log(id);
+            if (bprise > bprise2) {
+                $.ajax({
+                    url: "ajax_insert_bid.php",
+                    type: "POST",
+                    data: {
+                        ids: id,
+                        bp: bprise
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data == 1) {
+                            alert("Your Auction Price Has Been Saved");
+                        } else {
+                            alert("You Cannot Add Auction Price");
+                        }
+                    }
+                });
+            } else {
+                alert("You Must Enter a Price Higher Than ₹" + bprise2);
+            }
+        });
+    });
+</script>
+
+      
         <script>
             function refresh() {
                 var divElement = document.querySelectorAll('load');

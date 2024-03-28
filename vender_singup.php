@@ -31,12 +31,47 @@ if (isset($_POST['btnsubmit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="singup.css">
+
+    <script>
+        function validateForm() {
+            var vdname = document.forms["signupForm"]["vdname"].value;
+            var vdemail = document.forms["signupForm"]["vdemail"].value;
+            var vaddress = document.forms["signupForm"]["vaddress"].value;
+            var vdphone = document.forms["signupForm"]["vdphone"].value;
+            var vusername = document.forms["signupForm"]["vusername"].value;
+            var vpassword = document.forms["signupForm"]["vpassword"].value;
+            var confirm_password = document.forms["signupForm"]["confirm_password"].value;
+
+            // Email validation
+            var emailRegex = /\S+@\S+\.\S+/;
+            if (!emailRegex.test(vdemail)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            // Phone number validation
+            if (isNaN(vdphone) || vdphone.length !== 10) {
+                alert("Invalid phone number. Please enter 10 digits.");
+                return false;
+            }
+
+            // Password match validation
+            if (vpassword !== confirm_password) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
 </head>
 
 <body>
 
-    <form action="" method="POST">
-        <div class="container" onclick="onclick">
+    <form name="signupForm" action="" method="POST" onsubmit="return validateForm()">
+        <div class="container">
             <div class="top"></div>
             <div class="bottom"></div>
 
@@ -49,7 +84,7 @@ if (isset($_POST['btnsubmit'])) {
                 <input type="text" name="vdphone" placeholder="Vendor's Phone no.">
                 <input type="text" placeholder="User Name" name="vusername" />
                 <input type="password" placeholder="Password" name="vpassword" />
-                <input type="password" placeholder="Conform Password" />
+                <input type="password" placeholder="Confirm Password" name="confirm_password" />
                 <p><b>Already Have An Account?<a href="login.php">LOGIN</a></b></p>
                 <input type="Submit" value="Next" id="button" name="btnsubmit" />
 

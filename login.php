@@ -4,9 +4,9 @@ include("connect.php");
 if (isset($_SESSION['username'])) {
     header("location:home.php");
 }
-if (isset($_SESSION['vusername'])) {
-    header("location:vender_homepage.php");
-}
+// if (isset($_SESSION['vusername'])) {
+//     header("location:vender_homepage.php");
+// }
 if (isset($_POST['btnsubmit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -48,6 +48,13 @@ if (isset($_POST['btnsubmit'])) {
     } else {
         echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
     }
+
+    if ($username=="admin" && $password=="Krup@l1") {
+            header("location:admin.php");
+            $_SESSION['admin'] = $password;
+    } else {
+        echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
+    }
 }
 
 ?>
@@ -58,7 +65,7 @@ if (isset($_POST['btnsubmit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="singup.css">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
     <script>
         function validateForm() {
             var uname = document.getElementById('uname').value;

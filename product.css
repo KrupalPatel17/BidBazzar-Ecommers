@@ -6,7 +6,8 @@ body {
     background-image: url('bgimgs/p\ \(3\).jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;/
+    background-repeat: no-repeat;
+    
 }
 
 .products-container {
@@ -14,6 +15,7 @@ max-width: 1200px;
 margin: 20px auto;
 padding: 20px;
 box-sizing: border-box;
+padding-top: 7%;
 }
 
 .product {
@@ -37,6 +39,8 @@ color: #000;
 max-width: 200px;
 display: block;
 margin: 0 auto;
+aspect-ratio: 7/6;
+object-fit: contain;
 mix-blend-mode: darken;
 
 }

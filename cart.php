@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['username'])) {
     header("location:login.php");
 }
-
+ include("navbar2.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,19 +12,22 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add to Cart</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+
 
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
+          
         }
 
         .add-to-cart-container {
             max-width: 100%;
-            height: 100vh;
+            padding-top: 10%;
             background-color: #9d9d9d;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -34,11 +37,9 @@ if (!isset($_SESSION['username'])) {
 
         .product-details {
             width: calc(33.33% - 20px);
-            height: 72vh;
-            /* Adjust as needed */
+            height: 75vh;
             margin-right: 20px;
             margin-bottom: 20px;
-            margin-top: 20px;
             float: left;
             background-color: #f9f9f9;
             border: 1px solid #ddd;
@@ -57,12 +58,12 @@ if (!isset($_SESSION['username'])) {
 
         .product-details h2 {
             text-align: center;
-            margin-top: 10px;
+           
         }
 
         .product-details p {
             text-align: center;
-            margin-top: 5px;
+            margin-top: 0px;
             font-size: 16px;
             color: #333;
         }
@@ -70,7 +71,7 @@ if (!isset($_SESSION['username'])) {
         /* Add to Cart button */
         .add-to-cart input,
         .buy input {
-            padding: 10px 20px;
+            padding: 8px 20px;
             font-size: 16px;
             cursor: pointer;
             background-color: #ff4a4a;
@@ -88,7 +89,7 @@ if (!isset($_SESSION['username'])) {
         }
 
         .buy input {
-            margin-top: 10px;
+            margin-top: 8px;
             margin-left: 135px;
             background-color: #007bff;
         }
@@ -103,6 +104,16 @@ if (!isset($_SESSION['username'])) {
             margin: 0 auto;
             mix-blend-mode: darken;
         }
+
+        a {
+      list-style: none;
+      text-decoration: none;
+   }
+
+   a:hover {
+      text-decoration: none;
+
+   }
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {

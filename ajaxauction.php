@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <td>Starting Price Of Auction</td>
-            <td><input type='text' name='sprice' id='sprice' required></td>
+            <td><input type='number' name='sprice' id='sprice' required></td>
         </tr>
         <tr>
             <td>Date Of Auction</td>

@@ -14,11 +14,13 @@ $category = $cunt['category'];
 $details = $cunt['p_detail'];
 $p_price = $cunt['p_price'];
 $a_price = $_POST['stprice'];
+$bid_price = $_POST['stprice'];
 $time = $_POST['atime'];
+$f_time = $_POST['atime'];
 $date = $_POST['adate'];
 $uname="No One Does Bid Yet";
 
-$insert = "INSERT INTO `tbl_auction`(`product_id`, `v_id`, `s_no`, `p_name`, `p_image`, `category`, `p_details`, `p_price`,`a_price`,`date`,`time`,`user_id`,`bid_price`,`user_name`) VALUES ('$id','$vid','$sno','$p_name','$p_image','$category','$details','$p_price','$a_price','$date','$time',0,0,'$uname')";
+$insert = "INSERT INTO `tbl_auction`(`product_id`, `v_id`, `s_no`, `p_name`, `p_image`, `category`, `p_details`, `p_price`,`a_price`,`date`,`time`,`f_time`,`c_time`,`user_id`,`bid_price`,`user_name`) VALUES ('$id','$vid','$sno','$p_name','$p_image','$category','$details','$p_price','$a_price','$date','$time','$time',NOW(),0,'$bid_price','$uname')";
 
 if (mysqli_query($connect, $insert)) {
 

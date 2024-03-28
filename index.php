@@ -17,7 +17,7 @@ if (isset($_POST['btnstart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
 
 
 
@@ -103,6 +103,7 @@ if (isset($_POST['btnstart'])) {
             h3 {
                 font-size: 35px;
                 color: #9B30FF;
+                pad: 20px;
             }
 
             .btnstart {
@@ -130,9 +131,9 @@ if (isset($_POST['btnstart'])) {
 
         <div class="content">
             <h1>Hello,<b>GuestUser</b></h1>
-            <h3>Win An Auctions & Take Your Things </h3>
+            <h3 style="margin-top:1%">Win An Auctions & Take Your Things </h3>
 
-            <input type="submit" name="btnstart" value="Start Shopping" class="btnstart">
+            <input type="submit" name="btnstart" value="Start Shopping" class="btnstart" style="margin-top:3%">
         </div>
 
 

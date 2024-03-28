@@ -15,7 +15,7 @@ if (isset($_POST['btnsubmit'])) {
       unset($_SESSION['otp']);
       unset($_SESSION['email']);
     } else {
-      echo '<script>alert("Your OTP Was Wrong Plase Try Againg")</script>';
+      echo '<script>alert("Your OTP Was Wrong Please Try Again")</script>';
     }
   }
 
@@ -27,7 +27,7 @@ if (isset($_POST['btnsubmit'])) {
       unset($_SESSION['votp']);
       unset($_SESSION['vemail']);
     } else {
-      echo '<script>alert("Your OTP Was Wrong Plase Try Againg")</script>';
+      echo '<script>alert("Your OTP Was Wrong Please Try Again")</script>';
     }
   }
 }
@@ -77,7 +77,7 @@ if (isset($_POST['btnsubmit'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="singup.css">
-  <title>Document</title>
+  <title>Bid Bazzar</title>
 </head>
 
 <body>

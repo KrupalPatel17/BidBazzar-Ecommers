@@ -29,13 +29,13 @@ include("navbar2.php");
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+           
         }
 
         .jumbotron {
             background-color: #343a40;
             color: #fff;
-            padding: 40px;
+           padding-top: 8%;
             margin-bottom: 30px;
             border-radius: 0;
         }
@@ -60,9 +60,7 @@ include("navbar2.php");
         }
 
         .navbar {
-            background-color: #343a40;
-            /* Add a semi-transparent black background */
-            backdrop-filter: blur(10px);
+         
             border-radius: 0px;
         }
 
@@ -95,9 +93,11 @@ include("navbar2.php");
         <div class="container">
             <section id="about-section">
                 <h2 class="text-center">About Our Company</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p>BidBazzar is a website where Users can browse and purchase a wide range of products,</p>
+                <p>and they also have the exciting option of participating in real-time auctions for exclusive items.</p>
+                <p>That's the beauty of a hybrid e-commerce website that combines live auctions with traditional product sales.</p>
+                <p>The platform offers a user-friendly interface, secure payment options, and robust auction functionalities, </p>
+                <p>creating a diverse and engaging online marketplace. </p>
             </section>
             <section id="auction-section">
                 <h2 class="text-center">Auction Feature</h2>

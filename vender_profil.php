@@ -49,7 +49,7 @@ if (isset($_GET['bid'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bid Bazzar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
@@ -59,7 +59,8 @@ if (isset($_GET['bid'])) {
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	<style>
 		body {
-			background: rgb(99, 39, 120)
+			background: rgb(99, 39, 120);
+      padding-top: 4%;
 		}
 		
 		.form-control:focus {
@@ -176,7 +177,7 @@ if (isset($_GET['bid'])) {
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Vender Profile</h4>
+                    <h4 class="text-right">Vendor Profile</h4>
                 </div>
                
                 <div class="row mt-3">
@@ -185,7 +186,7 @@ if (isset($_GET['bid'])) {
                     <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="Enter Address"  name="address" value="<?php echo $data[3]; ?>"></div>
                     <div class="col-md-12"><label class="labels">Phone</label><input type="number" class="form-control" placeholder="Enter Phone" name="phone" value="<?php echo $data[4]; ?>"></div>
                     <div class="col-md-12"><label class="labels">User Name</label><input type="text" class="form-control" placeholder="Enter User Name" name="uname" value="<?php echo $data[5]; ?>"></div>
-                    <div class="col-md-12"><label class="labels">Shope Name</label><input type="text" class="form-control" placeholder="Enter Shope Name" name="sname" value="<?php echo $data[7]; ?>"></div>
+                    <div class="col-md-12"><label class="labels">Shop Name</label><input type="text" class="form-control" placeholder="Enter Shope Name" name="sname" value="<?php echo $data[7]; ?>"></div>
                     
                 </div>
                
@@ -194,8 +195,8 @@ if (isset($_GET['bid'])) {
         </div>
         <div class="col-md-4">
             <div class="p-3 py-5">
-				<div class="col-md-12"><label class="labels">Shope Number</label><input type="number" class="form-control" placeholder="Enter Shope Number" name="snumber" value="<?php echo $data[8]; ?>"></div>
-                <div class="col-md-12"><label class="labels">Shope Address</label><input type="text" class="form-control" placeholder="Enter Shope Address" name="saddress" value="<?php echo $data[9]; ?>"></div>
+				<div class="col-md-12"><label class="labels">Shop Number</label><input type="number" class="form-control" placeholder="Enter Shope Number" name="snumber" value="<?php echo $data[8]; ?>"></div>
+                <div class="col-md-12"><label class="labels">Shop Address</label><input type="text" class="form-control" placeholder="Enter Shope Address" name="saddress" value="<?php echo $data[9]; ?>"></div>
                 <div class="col-md-12"><label class="labels">Pincode</label><input type="number" class="form-control" placeholder="Enter Pincode" name="pincode" value="<?php echo $data[10]; ?>"></div>
                 <div class="col-md-12"><label class="labels">GST No</label><input type="number" class="form-control" placeholder="Enter GST No." name="gst" value="<?php echo $data[11]; ?>"></div>
                 <div class="col-md-12"><label class="labels">Bank Name</label><input type="text" class="form-control" placeholder="Enter Bank Name" name="bname" value="<?php echo $data[12]; ?>"></div>
