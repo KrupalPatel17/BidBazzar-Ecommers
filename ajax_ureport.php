@@ -7,7 +7,7 @@ $result = mysqli_query($connect, $select);
 $i = 0;
 
 if ($result) {
-    $output = "<h1>Fixed Table header</h1>
+    $output = "<h1>Auction Report</h1>
                 <div class='tbl-header'>
                     <table class='tbl' cellpadding='0' cellspacing='0' border='0'>
                         <thead>

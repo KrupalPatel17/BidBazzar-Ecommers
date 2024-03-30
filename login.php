@@ -94,7 +94,8 @@ if (isset($_POST['btnsubmit'])) {
 
                 <input type="text" placeholder="User Name" name="username" id="uname" />
                 <input type="password" placeholder="Password" name="password" id="password" />
-                <p><b>Don't Have An Account?<a href="opction.html">SINGUP</a></b></p>
+                <p><b>Don't Have An Account?<a href="opction.html">SINGUP</a></b><br>
+                <b>Visite Web Site <a href="index.php"> Guest User</a></b></p>
                 <input type="Submit" value="Login" id="button" name="btnsubmit" id="button" />
 
 

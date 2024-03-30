@@ -1,11 +1,12 @@
 <?php
+session_start();
 if (isset($_POST['btnlogout'])) {
+   header("location:login.php");
+   unset($_SESSION['admin']);
+}
+if (!isset($_SESSION['admin'])) {
     header("location:login.php");
-    unset($_SESSION['admin']);
- }
-//  if (!isset($_SESSION['admin'])) {
-//      header("location:login.php");
-//  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

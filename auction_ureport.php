@@ -16,6 +16,7 @@
             font-weight: 300;
             text-align: center;
             margin-bottom: 15px;
+            padding-top: 5%;
         }
 
         .tbl {

@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Bid Bazzar</title>
     <style>
         body {
@@ -28,6 +32,21 @@
             color: #fff;
             cursor: pointer;
             transition: all 0.5s ease;
+           
+        }
+        #user{
+            animation: fadeInLeft;
+            animation-duration: 2s; 
+        }
+
+        #login{
+            animation: fadeInRight;
+            animation-duration: 2s; 
+        }
+
+        #vender{
+            animation: fadeIn;
+            animation-duration: 3s; 
         }
 
         .login-option:hover {
@@ -88,18 +107,20 @@
 <body>
 
     <div class="container">
-        <div class="login-option login-user">
-            <h2>SignUp as User</h2>
+        <div class="login-option login-user" id="user">
+            <!-- <div class="animate__animated animate__fadeInLeft"> -->
+            <h2 >SignUp as User</h2>
             <p>Click here to SignUp as a User</p>
             <a href="singup.php" style="color: #fff; text-decoration: none;"><button class="btn">SignUp</button></a>
+        <!-- </div> -->
         </div>
-        <div class="login-option login-vendor">
+        <div class="login-option login-vendor"  id="vender">
             <h2>SignUp as Vendor</h2>
             <p>Click here to SignUp as a Vendor</p>
             <a href="vender_singup.php" style="color: #fff; text-decoration: none;"><button class="sbtn">SignUp</button></a>
         </div>
 
-        <div class="login-option login-again">
+        <div class="login-option login-again" id="login">
             <h2>Back To Login</h2>
             <p>Click here to Login</p>
             <a href="login.php" style="color: #fff; text-decoration: none;"><button class="btnlogin">Login</button></a>

@@ -109,7 +109,7 @@ include("navbar2.php");
     </main>
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
-            <p>&copy; 2024 E-Commerce Site. All rights reserved.</p>
+            <p>&copy; 2024 Bid Bazzar. All rights reserved.</p>
         </div>
     </footer>
     <!-- Feedback Button -->

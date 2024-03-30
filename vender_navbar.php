@@ -1,5 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <style>
    /* Resetting default margins and paddings */
    * {
@@ -27,6 +27,8 @@
       padding: 10px;
       border-radius: 7px;
       transition: all ease 0.5s;
+      animation: fadeInDown;
+      animation-duration: 0.9s;
    }
 
    .navbar:hover {
@@ -39,6 +41,8 @@
    .logo-container {
       display: flex;
       align-items: center;
+      animation: backInDown;
+      animation-duration: 1.7s;
    }
 
    .logo h2 {
@@ -99,6 +103,8 @@
 
    .nav-links li {
       margin-right: 27px;
+      animation: backInDown;
+      animation-duration: 1.7s;
    }
 
    .nav-links li a {
@@ -170,6 +176,8 @@
       text-align: right;
       color:#FFF;
       filter: drop-shadow(1px 1px 5px #FFF);
+      animation: backInDown;
+      animation-duration: 1.7s;
    }
 
    #uname{
@@ -178,6 +186,8 @@
       text-align: right;
       color: #00d7ff;
       filter: drop-shadow(1px 1px 5px  #00d7ff);
+      animation: backInDown;
+      animation-duration: 1.7s;
    }
 
    ::-webkit-scrollbar {

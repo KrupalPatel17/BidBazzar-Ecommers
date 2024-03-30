@@ -16,6 +16,7 @@ margin: 20px auto;
 padding: 20px;
 box-sizing: border-box;
 padding-top: 7%;
+
 }
 
 .product {
@@ -33,6 +34,10 @@ margin-right: 20px;
 border-radius: 10px;
 color: #000;
 
+}
+
+.products-container .product:nth-child(3n+1) {
+    animation: pulse 2s;
 }
 
 .product img {

@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#007bff"> 
+    <meta name="theme-color" content="#007bff">
     <title>Bid Bazzar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-    
+
     <style>
         body {
             margin: 0;
@@ -39,6 +39,8 @@
             margin-top: 20px;
             margin-bottom: 50px;
             border: 2px solid black;
+            animation: slideInUp;
+            animation-duration: 2s;
         }
 
         .slider-container:hover {
@@ -64,7 +66,7 @@
         }
 
         .category {
-            
+
             position: relative;
             width: 14%;
             height: 30vh;
@@ -76,6 +78,8 @@
             margin: 10px;
             transition: all ease 0.8s;
             filter: drop-shadow(8px 8px 7px black);
+            animation: rollIn;
+            animation-duration: 2s;
         }
 
         .category:hover {
@@ -157,7 +161,7 @@
 
 <body>
     <?php
-   
+
     include("connect.php");
     include("navbar2.php");
     if (!isset($_SESSION['username'])) {
