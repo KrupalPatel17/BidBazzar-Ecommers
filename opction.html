@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Bid Bazzar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #800080;
+        }
+
+           .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-option {
+            width: 28%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.5s ease;
+           
+        }
+        #user{
+            animation: fadeInLeft;
+            animation-duration: 2s; 
+        }
+
+        #login{
+            animation: fadeInRight;
+            animation-duration: 2s; 
+        }
+
+        #vender{
+            animation: fadeIn;
+            animation-duration: 3s; 
+        }
+
+        .login-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 1px 5px black;
+        }
+
+        .login-user {
+            background-color: #A569BD;
+        }
+
+        .login-vendor {
+            background:linear-gradient(90deg,#A569BD, #2C3E50);
+        }
+
+        .login-again {
+            background-color: #2C3E50;
+        }
+
+        .login-option h2 {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .btn,.sbtn,.btnlogin{
+            background-color: #A569BD;
+            width: 20%;
+            height: 6vh;
+            border-radius: 5px;
+            border:2px solid white;
+            transition: all ease 0.5s;
+            font-weight: bold;
+            color: white;
+        }
+        .sbtn{
+            background:linear-gradient(90deg, #A569BD, #2C3E50);
+        }
+        .sbtn:hover{
+            transform: scale(1.09);
+            background:linear-gradient(90deg,#df8dff, #17202a);
+            color: white;
+        }
+        .btn:hover{
+            transform: scale(1.09);
+            background-color: #800080;
+            color: aliceblue;
+        }
+        .btnlogin{
+            background-color: #2C3E50;
+        }
+        .btnlogin:hover{
+            transform: scale(1.09);
+            background-color: #434547;
+            color: white;
+        }
+
+       @media screen and (max-width: 768px) {
+               .container {
+            display: block;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-vendor {
+        background:linear-gradient(180deg,#A569BD, #2C3E50);
+        }
+
+        .sbtn{
+        background:linear-gradient(180deg, #A569BD, #2C3E50);
+        }
+        
+             .login-option {
+            width: 80%;
+            margin-left:15px;
+            margin-top:15px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        #user{
+            margin-top:17%;
+        }
+
+        .btn,.sbtn,.btnlogin{
+        background-color: #A569BD;
+        width: 30%;
+        height: 6vh;
+        border-radius: 5px;
+        border:2px solid white;
+        transition: all ease 0.5s;
+        font-weight: bold;
+        color: white;
+        }
+
+        .btnlogin{
+        background-color: #2C3E50;
+        }
+        
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="login-option login-user" id="user">
+            <!-- <div class="animate__animated animate__fadeInLeft"> -->
+            <h2 >SignUp as User</h2>
+            <p>Click here to SignUp as a User</p>
+            <a href="singup.php" style="color: #fff; text-decoration: none;"><button class="btn">SignUp</button></a>
+        <!-- </div> -->
+        </div>
+        <div class="login-option login-vendor"  id="vender">
+            <h2>SignUp as Vendor</h2>
+            <p>Click here to SignUp as a Vendor</p>
+            <a href="vender_singup.php" style="color: #fff; text-decoration: none;"><button class="sbtn">SignUp</button></a>
+        </div>
+
+        <div class="login-option login-again" id="login">
+            <h2>Back To Login</h2>
+            <p>Click here to Login</p>
+            <a href="login.php" style="color: #fff; text-decoration: none;"><button class="btnlogin">Login</button></a>
+        </div>
+    </div>
+  
+
+</body>
+
+</html>
