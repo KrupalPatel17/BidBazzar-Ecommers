@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("connect.php");
+include("navbar2.php");
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
   <style>
     body {
       background-color: #f8f9fa;
+      padding-top: 5%;
     }
     .card {
       border: none;

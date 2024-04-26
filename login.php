@@ -32,7 +32,7 @@ if (isset($_POST['btnsubmit'])) {
 
             header("location:home.php");
         } else {
-            echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
+            echo '<script>alert("Either Username Or Password Is Wrong")</script>';
         }
     }
 
@@ -43,17 +43,17 @@ if (isset($_POST['btnsubmit'])) {
             $_SESSION['vender_id'] = $veid;
             header("location:vender_homepage.php");
         } else {
-            echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
+            echo '<script>alert("Either Username Or Password Is Wrong")</script>';
         }
     } else {
-        echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
+        echo '<script>alert("Either Username Or Password Is Wrong")</script>';
     }
 
     if ($username=="admin" && $password=="Krup@l1") {
             header("location:admin.php");
             $_SESSION['admin'] = $password;
     } else {
-        echo '<script>alert("Eiter Username Or Password Is Wrong")</script>';
+        echo '<script>alert("Either Username Or Password Is Wrong")</script>';
     }
 }
 
@@ -94,8 +94,8 @@ if (isset($_POST['btnsubmit'])) {
 
                 <input type="text" placeholder="User Name" name="username" id="uname" />
                 <input type="password" placeholder="Password" name="password" id="password" />
-                <p><b>Don't Have An Account?<a href="opction.html">SINGUP</a></b><br>
-                <b>Visite Web Site <a href="index.php"> Guest User</a></b></p>
+                <p><b>Don't Have An Account?<a href="opction.html">SIGNUP</a></b><br>
+                <b>Visit Web Site <a href="index.php"> Guest User</a></b></p>
                 <input type="Submit" value="Login" id="button" name="btnsubmit" id="button" />
 
 

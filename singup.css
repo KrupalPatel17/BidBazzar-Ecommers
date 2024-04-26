@@ -6,7 +6,9 @@ box-sizing: border-box;
 body {
 min-height: 100vh;
 font-family: "Raleway", sans-serif;
-
+overflow-x: hidden; 
+overflow-y: hidden;
+ 
 }
 
 .container {

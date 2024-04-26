@@ -12,6 +12,8 @@ $max_b = $check['a_price'];
 $a_declare = $check['c_time'];
 $a_start = $check['f_time'];
 $a_start_d = $check['date'];
+$userid = $check['user_id'];
+$username = $check['user_name'];
 
 $sel = "SELECT * FROM tbl_user_auction WHERE a_id='$a_id' ORDER BY time DESC"; // Fetching bids in descending order of time
 $uresult = mysqli_query($connect, $sel);
@@ -51,27 +53,29 @@ $output = "<dl class='row'>
 <th style='width:5%'>User Name</th>
 <th style='width:5%'>Bid Price</th>
 <th style='width:8%'>Date\Time</th>
-<th style='width:9%'>User Email Id</th>";
+<th style='width:9%'>User Email Id</th>
+<th style='width:9%'>Status</th>";
 
 $i = 1;
 while ($row = mysqli_fetch_assoc($uresult)) {
     $user_id = $row['user_id'];
     $bid_price = $row['u_price'];
     $time = $row['time'];
-
+  
     $usel = "SELECT * FROM tbl_user WHERE user_id='$user_id'";
     $usresult = mysqli_query($connect, $usel);
     $uscheck = mysqli_fetch_assoc($usresult);
 
     $u_name = $uscheck['username'];
     $email = $uscheck['email'];
-
+    $status = ($u_name == $username) ? 'WIN' : 'LOSE';
     $output .= "<tr>
    <td>$i</td>
    <td>$u_name</td>
    <td>$bid_price</td>
    <td>$time</td>
    <td>$email</td>
+   <td>$status</td>
    </tr>";
 
     $i++;

@@ -130,8 +130,8 @@ if (isset($_POST['btnstart'])) {
 
 
         <div class="content">
-            <h1>Hello,<b>GuestUser</b></h1>
-            <h3 style="margin-top:1%">Win An Auctions & Take Your Things </h3>
+            <h1>Hello <b>GuestUser</b></h1>
+            <h3 style="margin-top:1%">Win An Auction & Take Your Things </h3>
 
             <input type="submit" name="btnstart" value="Start Shopping" class="btnstart" style="margin-top:3%">
         </div>

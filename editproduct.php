@@ -2,29 +2,28 @@
 session_start();
 include("connect.php");
 
-// $ide=$_POST["pids"];
-
-// $sel="select * from tbl_product where product_id='$ide'";
-// $result=mysqli_query($connect,$sel);
-// $check = mysqli_fetch_assoc($result);
-// $userid=$check['vid'];
-// $_SESSION['pid']=$userid;
-// echo $_SESSION['pid'];
-// echo $check;
-// if(mysqli_query($connect,$sel)){
-//     $result = mysqli_fetch_assoc($check);
-//      echo 1;
-//  }
-//  else{
-//      echo 0;
-//  }
-$filename= $_FILES["uploadfile"]["name"];
-$tmpname= $_FILES["uploadfile"]["tmp_name"];
-$folder ="img/".$filename;
-move_uploaded_file($tmpname,$folder);
 if (isset($_POST['btnsave'])) {
     $pid = $_GET['pid'];
-    $update = "UPDATE tbl_product SET `s_no`='$_POST[sno]', p_name='$_POST[pname]',p_image='$folder' ,category='$_POST[category]', p_detail='$_POST[pdetails]', p_quantity='$_POST[quantity]', p_price='$_POST[price]' WHERE product_id=$pid";
+    $sno = $_POST['sno'];
+    $pname = $_POST['pname'];
+    $category = $_POST['category'];
+    $pdetails = $_POST['pdetails'];
+    $quantity = $_POST['quantity'];
+    $price = $_POST['price'];
+
+    // Check if a new image is uploaded
+    if ($_FILES["uploadfile"]["error"] == 0) {
+        $filename = $_FILES["uploadfile"]["name"];
+        $tmpname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "img/" . $filename;
+        move_uploaded_file($tmpname, $folder);
+
+        $update = "UPDATE tbl_product SET `s_no`='$sno', p_name='$pname', p_image='$folder', category='$category', p_detail='$pdetails', p_quantity='$quantity', p_price='$price' WHERE product_id=$pid";
+    } else {
+        // If no new image uploaded, keep the existing image
+        $update = "UPDATE tbl_product SET `s_no`='$sno', p_name='$pname', category='$category', p_detail='$pdetails', p_quantity='$quantity', p_price='$price' WHERE product_id=$pid";
+    }
+
     if (mysqli_query($connect, $update)) {
         echo '<script>alert("Your Account Has Been Update Successfully")</script>';
         header("location: vender_product.php");
@@ -32,7 +31,6 @@ if (isset($_POST['btnsave'])) {
         echo "Error updating record: " . mysqli_error($connect);
     }
 }
-
 
 if (isset($_GET['pid'])) {
     $sel = "select * from tbl_product where product_id=$_GET[pid]";
@@ -60,10 +58,11 @@ if (isset($_GET['pid'])) {
   <style>
     body {
       background-color: #2C3E50;
-      color: white;
+      color: #2C3E50;
     }
     .container {
       margin-top: 50px;
+      color: white;
     }
     .profile-form {
       background-color: #800080;
@@ -104,9 +103,7 @@ if (isset($_GET['pid'])) {
             <label for="productImage">Product Image</label>
             <div class="custom-file">
              <input type="file" class="custom-file-input" id="productImage"  name="uploadfile" >
-            <label class="custom-file-label" for="productImage"> <?php echo $data[3]; ?></label>
-            <!-- <input type="file"  > -->
-            
+            <label class="custom-file-label" for="productImage"><?php echo $data[3]; ?></label>
             </div>
             <div class="form-group">
               <label for="address">Category</label>
@@ -117,7 +114,7 @@ if (isset($_GET['pid'])) {
               <textarea class="form-control" id="address" rows="3" placeholder="Enter address" name="pdetails"><?php echo $data[5]; ?></textarea>
             </div>
             <div class="form-group">
-              <label for="address">Quentity</label>
+              <label for="address">Quantity</label>
               <input type="number" class="form-control" id="address" rows="3" placeholder="Enter address" name="quantity" value="<?php echo $data[6]; ?>">
             </div>
             <div class="form-group">

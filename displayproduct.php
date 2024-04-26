@@ -145,7 +145,7 @@ $pid = $_GET['pids'];
                         <li><?php echo $row['category']; ?></li>
                         <div class="add-to-cart">
                             <button id="addtocart" data-id='<?php echo $row["product_id"]; ?>'>Add to Cart</button>
-                            <a href="payment.html"><button>Buy Now</button></a>
+                            <a href="payment.php"><button>Buy Now</button></a>
                         </div>
                 </div>
             </div>

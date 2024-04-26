@@ -59,7 +59,7 @@ include("connect.php");
                         echo "<a href='auction_display.php?pids={$row["a_id"]}'><div class='product'>";
                         echo "<img src='" . $row['p_image'] . "' alt='" . $row['name'] . "'><br>";
                         echo "<h2>" . $row['p_name'] . "</h2>";
-                        echo "<p>Price:" . $row['p_price'] . "</p>";
+                        echo "<p>Price:" . $row['bid_price'] . "</p>";
                         //echo "<p>Auction Starting Starting:" . $row['time'] . "</p>";
                         echo "<p><span class='countdown' data-time='{$row['time']}' data-date='{$row['date']}'>Countdown</span></p>";
                         echo "</div></a>";
