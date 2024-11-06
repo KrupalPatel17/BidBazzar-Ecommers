@@ -66,7 +66,10 @@
         }
 
         .category {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
             position: relative;
             width: 14%;
             height: 30vh;
@@ -134,6 +137,7 @@
         }
 
         @media (max-width: 768px) {
+<<<<<<< HEAD
             .category {
                 width: 30%;
                 height: 90px;
@@ -142,6 +146,14 @@
             .slider-container {
                 width: 90%;
                 height: 40vh;
+=======
+            body{
+                  padding-top: 17%;
+            }
+            .category {
+                width: 40%;
+                height: 130px;
+>>>>>>> origin/main
             }
 
             .slide {
@@ -149,12 +161,22 @@
             }
 
             .slider-container {
+<<<<<<< HEAD
                 width: 90%;
                 height: 20vh;
+=======
+                width: 105%;
+                height: 26vh;
+>>>>>>> origin/main
                 overflow: hidden;
                 border-radius: 10px;
                 transition: all each 1s;
             }
+<<<<<<< HEAD
+=======
+
+         
+>>>>>>> origin/main
         }
     </style>
 </head>

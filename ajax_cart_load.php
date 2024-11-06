@@ -23,7 +23,11 @@ if ($result->num_rows > 0) {
                     <input type="submit" value="Remove From Cart" id="addtocart" class="delete-btn" data-id="<?php echo $row['product_id'] ?>">
                 </div>
                 <div class="buy">
+<<<<<<< HEAD
                    <a href="payment.php"><input type="submit" value="Buy Now"></a> 
+=======
+                    <input type="submit" value="Buy Now">
+>>>>>>> origin/main
                 </div>
             </div>
         </div>

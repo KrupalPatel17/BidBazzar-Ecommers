@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bid Bazzar</title>
+<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+=======
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+
+>>>>>>> origin/main
     <style>
         body {
             margin: 0;
@@ -15,7 +21,13 @@
             background-image: url('bgimgs/p.jpg');
             background-size: cover;
             background-position: center;
+<<<<<<< HEAD
             background-repeat: no-repeat;/
+=======
+            background-repeat: no-repeat;
+            z-index:1;
+            height:100vh;
+>>>>>>> origin/main
         }
 
         .container {
@@ -56,6 +68,10 @@
             justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 20px;
+<<<<<<< HEAD
+=======
+              z-index:1;
+>>>>>>> origin/main
         }
 
         .category {
@@ -70,6 +86,10 @@
             margin: 10px;
             transition: transform 0.3s ease;
             filter: drop-shadow(8px 8px 7px black);
+<<<<<<< HEAD
+=======
+              z-index:1;
+>>>>>>> origin/main
         }
 
         .category:hover {
@@ -83,6 +103,10 @@
             height: 100%;
             object-fit: cover;
             transition: filter 0.3s ease;
+<<<<<<< HEAD
+=======
+              z-index:1;
+>>>>>>> origin/main
         }
 
         .overlay {
@@ -120,6 +144,10 @@
             .category {
                 width: 30%;
                 height: 90px;
+<<<<<<< HEAD
+=======
+                  z-index:1;
+>>>>>>> origin/main
             }
 
             .slider-container {

@@ -22,7 +22,11 @@ if (!isset($_SESSION['username'])) {
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+<<<<<<< HEAD
           
+=======
+          height:100vh
+>>>>>>> origin/main
         }
 
         .add-to-cart-container {
@@ -117,14 +121,25 @@ if (!isset($_SESSION['username'])) {
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
+<<<<<<< HEAD
             .product-details {
                 width: calc(50% - 20px);
                 height: 46vh;
+=======
+            body{
+                  padding-top:30%;
+            }
+            .product-details {
+                width: 90%;
+                height: 45vh;
+                margin-left:15px;
+>>>>>>> origin/main
             }
 
             .product-details:nth-child(2n) {
                 margin-right: 0;
             }
+<<<<<<< HEAD
         }
 
         @media screen and (max-width: 480px) {
@@ -134,6 +149,49 @@ if (!isset($_SESSION['username'])) {
                 margin-right: 0;
             }
         }
+=======
+
+              .product-image img {
+            max-width: 40%;
+            display: block;
+            margin: 0 auto;
+            mix-blend-mode: darken;
+        }
+
+             .product-details p {
+            text-align: center;
+            margin-top: 0px;
+            font-size: 21px;
+            color: #333;
+        }
+        
+        .product-details h2 {
+            text-align: center;
+         font-size:25px  
+        }
+         .add-to-cart input,
+        .buy input {
+            padding: 6px 15px;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #ff4a4a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            margin-left: 100px;
+        }
+
+         .buy input {
+            margin-top: 8px;
+            margin-left: 115px;
+            background-color: #007bff;
+        }
+        }
+
+        
+     
+>>>>>>> origin/main
     </style>
 </head>
 

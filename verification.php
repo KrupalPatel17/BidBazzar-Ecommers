@@ -8,6 +8,10 @@ if (isset($_POST['btnsubmit'])) {
   $cotp = $_POST['otp'];
 
   if (isset($_SESSION['otp'])) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/main
     $otp = $_SESSION['otp'];
     if ($otp == $cotp) {
 
@@ -93,9 +97,19 @@ if (isset($_POST['btnsubmit'])) {
         <h5>To verify your email, we've sent a One Time<br>
           Password (OTP) to <u><?php if (isset($_SESSION['email'])) {
                                   echo $_SESSION['email'];
+<<<<<<< HEAD
                                 } else {
                                   echo $_SESSION['vemail'];
                                 }  ?> </u></h5>
+=======
+                                  echo"</u><br><br>";
+                                  echo"Sorry For Problem Our Mail Services Is Unavailable For SomeTime Your OTP Is Given Below<br>";
+                                  echo "<h3 style='text-decoration:none;'> Your OTP IS <b style='color:red; text-decoration:none;'>". $_SESSION['otp'] ."</b></h3>";
+                                  
+                                } else {
+                                  echo $_SESSION['vemail'];
+                                }  ?> </h5>
+>>>>>>> origin/main
         <input type="text" placeholder="OTP" name="otp" />
 
         <input type="Submit" value="Submit" id="button" name="btnsubmit" />

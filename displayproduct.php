@@ -24,6 +24,10 @@ $pid = $_GET['pids'];
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #C0C0C0;
+<<<<<<< HEAD
+=======
+            z-index:1;
+>>>>>>> origin/main
         }
 
         .product-container {
@@ -31,6 +35,10 @@ $pid = $_GET['pids'];
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
+<<<<<<< HEAD
+=======
+                z-index:1;
+>>>>>>> origin/main
         }
 
         .product-details {
@@ -41,6 +49,10 @@ $pid = $_GET['pids'];
         .product-image {
             flex: 1;
             margin-right: 20px;
+<<<<<<< HEAD
+=======
+            z-index:1;
+>>>>>>> origin/main
         }
 
         .product-image img {
@@ -49,8 +61,11 @@ $pid = $_GET['pids'];
             border-radius: 10px;
             transition: all ease 0.5s;
             filter: drop-shadow(4px 4px 5px black);
+<<<<<<< HEAD
             /* mix-blend-mode: darken; */
 
+=======
+>>>>>>> origin/main
         }
 
         .product-image img:hover {
@@ -112,7 +127,11 @@ $pid = $_GET['pids'];
         @media screen and (max-width: 768px) {
             .product-image img {
                 width: 200px;
+<<<<<<< HEAD
 
+=======
+                 z-index:1;
+>>>>>>> origin/main
             }
 
         }
@@ -145,7 +164,11 @@ $pid = $_GET['pids'];
                         <li><?php echo $row['category']; ?></li>
                         <div class="add-to-cart">
                             <button id="addtocart" data-id='<?php echo $row["product_id"]; ?>'>Add to Cart</button>
+<<<<<<< HEAD
                             <a href="payment.php"><button>Buy Now</button></a>
+=======
+                            <a href="payment.html"><button>Buy Now</button></a>
+>>>>>>> origin/main
                         </div>
                 </div>
             </div>

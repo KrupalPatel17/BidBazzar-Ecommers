@@ -56,7 +56,10 @@
       font-size: 220%;
       color: white;
       text-shadow: 0px 0px 5px #1ebfdd, 0px 0px 5px #1ebfdd;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
       margin: 0 10px;
    }
 
@@ -113,6 +116,11 @@
    .nav-links {
       display: flex;
       list-style: none;
+<<<<<<< HEAD
+=======
+       animation: backInDown;
+      animation-duration: 1.7s;
+>>>>>>> origin/main
    }
 
    .nav-links li {
@@ -222,7 +230,11 @@
       padding: 10px;
       border-radius: 5px;
       border: solid 1px white;
+<<<<<<< HEAD
       z-index: 1;
+=======
+      z-index: 2;
+>>>>>>> origin/main
       width: 150%;
       font-size: 80%;
    }
@@ -233,10 +245,30 @@
 
    /* Media query for responsiveness */
    @media screen and (max-width: 768px) {
+<<<<<<< HEAD
+=======
+      nav{
+          z-index:2;
+      }
+>>>>>>> origin/main
       .logo-container {
          margin-left: 10px;
       }
 
+<<<<<<< HEAD
+=======
+       .logo h2 {
+      font-size: 160%;
+      color: white;
+      text-shadow: 0px 0px 5px #1ebfdd, 0px 0px 5px #1ebfdd;
+     }
+
+     .logo img {
+      width: 40px;
+      height: 40px;
+   }
+
+>>>>>>> origin/main
       .menu-icon {
          display: block;
       }
@@ -244,22 +276,41 @@
       .nav-links {
          display: none;
          position: absolute;
+<<<<<<< HEAD
          top: 70px;
          right: 0;
          background-color: rgb(0 0 0 / 50%);
          /* Add a semi-transparent black background */
+=======
+         top: 72px;
+         right: 0;
+         background-color: rgb(0 0 0 / 50%);
+         font-size: 80%;
+>>>>>>> origin/main
          backdrop-filter: blur(10px);
          width: 100%;
          flex-direction: column;
          align-items: center;
+<<<<<<< HEAD
+=======
+          z-index:2;
+>>>>>>> origin/main
       }
 
       .nav-links.active {
          display: flex;
+<<<<<<< HEAD
+=======
+           z-index:2;
+>>>>>>> origin/main
       }
 
       .nav-links li {
          margin: 10px 0;
+<<<<<<< HEAD
+=======
+           z-index:2;
+>>>>>>> origin/main
       }
 
       .search-bar {
@@ -271,6 +322,7 @@
 
       .search-bar {
          display: none;
+<<<<<<< HEAD
          /* Hidden by default */
          position: absolute;
          top: 80px;
@@ -278,6 +330,13 @@
          transform: translateX(-50%);
          background-color: rgb(0 0 0 / 41%);
          /* Add a semi-transparent black background */
+=======
+         position: absolute;
+         top: 65px;
+         left: 160px;
+         transform: translateX(-50%);
+         background-color: rgb(0 0 0 / 41%);
+>>>>>>> origin/main
          backdrop-filter: blur(10px);
          padding: 10px;
          border-radius: 5px;
@@ -285,7 +344,12 @@
       }
 
       .search-bar input {
+<<<<<<< HEAD
          width: 120px;
+=======
+         width: 150px;
+         height:3.9vh;
+>>>>>>> origin/main
          padding: 5px;
          border: none;
          border-radius: 3px;
@@ -300,6 +364,30 @@
          text-decoration: none;
       }
 
+<<<<<<< HEAD
+=======
+        #hello {
+      font-size: 100%;
+      font-weight: bold;
+      text-align: right;
+      color: #FFF;
+      filter: drop-shadow(1px 1px 5px #FFF);
+      animation: backInDown;
+      animation-duration: 1.7s;
+   }
+
+   #uname {
+      font-size: 100%;
+      font-weight: bold;
+      text-align: right;
+      color: #00d7ff;
+      filter: drop-shadow(1px 1px 5px #00d7ff);
+      animation: backInDown;
+      animation-duration: 1.7s;
+      
+   }
+
+>>>>>>> origin/main
    }
 </style>
 
@@ -326,11 +414,15 @@
          </table>
       </div>
    </div>
+<<<<<<< HEAD
    <div class="menu-icon" onclick="toggleMenu()">
       <div class="menu-line"></div>
       <div class="menu-line"></div>
       <div class="menu-line"></div>
    </div>
+=======
+ 
+>>>>>>> origin/main
    <ul class="nav-links">
       <li><a href="cart.php">Cart <i class="ri-shopping-cart-2-line" id="i"></i></a></li>
       <li class="auction-dropdown">
@@ -354,6 +446,14 @@
       <h6 id="hello">Hello,</h6>
       <h6 id="uname"><?php echo $_SESSION['username']; ?></h6>
    </div>
+<<<<<<< HEAD
+=======
+     <div class="menu-icon" onclick="toggleMenu()">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+   </div>
+>>>>>>> origin/main
 </nav>
 
 <script>

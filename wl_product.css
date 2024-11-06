@@ -35,7 +35,11 @@ body {
     max-width: 200px;
     display: block;
     margin: 0 auto;
+<<<<<<< HEAD
     mix-blend-mode: darken;
+=======
+    z-index: 1;
+>>>>>>> origin/main
 }
 
 .product h2 {
@@ -64,14 +68,30 @@ body {
 @media screen and (max-width: 768px) {
     .product {
         width: calc(50% - 20px);
+<<<<<<< HEAD
         /* Adjust for smaller screens */
     }
+=======
+        height: 45vh;
+        margin-left: 3%;
+    }
+
+    .products-container {
+
+        padding-top: 20%;
+
+    }
+
+>>>>>>> origin/main
 }
 
 @media screen and (max-width: 480px) {
     .product {
         width: calc(100% - 20px);
+<<<<<<< HEAD
         /* Full width for smaller screens */
+=======
+>>>>>>> origin/main
         margin-right: 0;
     }
 }

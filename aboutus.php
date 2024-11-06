@@ -113,7 +113,11 @@ include("navbar2.php");
         </div>
     </footer>
     <!-- Feedback Button -->
+<<<<<<< HEAD
     <!-- <a href="https://forms.visme.co/formsPlayer/dm0eyx1g-untitled-project"><button class="feedback-button">Feedback</button></a> -->
+=======
+    <a href="https://forms.visme.co/formsPlayer/dm0eyx1g-untitled-project"><button class="feedback-button">Feedback</button></a>
+>>>>>>> origin/main
     <!-- Bootstrap JS, Popper.js, jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
