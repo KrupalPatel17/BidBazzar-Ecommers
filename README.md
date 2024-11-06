@@ -1,7 +1,5 @@
-# BidBazza 🎉  
+# BidBazza 🛒  
 **An E-commerce Platform with Live Auctions**
-
-![BidBazza Banner](https://via.placeholder.com/800x200.png?text=Welcome+to+BidBazza) <!-- Replace with an actual banner image or animated GIF -->
 
 ---
 
